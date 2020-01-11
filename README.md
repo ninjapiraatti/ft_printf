@@ -20,5 +20,4 @@ http://www.cplusplus.com/reference/cstdio/printf/
 
 http://www.pixelbeat.org/programming/gcc/format_specs.html
 
-
-
+https://stackoverflow.com/questions/35791061/parameter-passing-with-ellipsis-in-c
