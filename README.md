@@ -12,3 +12,13 @@ https://developer.apple.com/library/archive/qa/qa1405/_index.html
 
 ## Useful materials from other students
 
+https://www.cypress.com/file/54441/download
+
+https://notgnoshi.github.io/printf/
+
+http://www.cplusplus.com/reference/cstdio/printf/
+
+http://www.pixelbeat.org/programming/gcc/format_specs.html
+
+
+
