@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/11 15:31:30 by tlouekar         ###   ########.fr       */
+/*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
+/*   Updated: 2020/01/11 15:09:45 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int			ft_printf(const char *format, ...)
+# include "../libft/includes/libft.h"
+# include <fcntl.h>
+# include <stdarg.h>
+# include <stdio.h> // REMOVE IT YOU DUMBASS
+
+typedef	struct	s_printf
 {
-	va_list	args;
+	int			i;
+}				t_printf;
 
-	va_start(args, format);
-	vprintf(format, args);
-	display_str(format);
-	va_end(args);
-	return (0);
-}
+void			display_c(const char c);
+void			display_str(const char *str);
+int				ft_printf(const char *format, ...);
+#endif
