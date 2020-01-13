@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/13 10:24:42 by tlouekar         ###   ########.fr       */
+/*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
+/*   Updated: 2020/01/13 11:15:34 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_printf(const char *format, ...)
+t_printf		*initialize(void)
 {
-	va_list	args;
+	t_printf	*data;
 
-	va_start(args, format);
-	//vprintf(format, args);
-	parse((char *)format);
-	va_end(args);
-	return (0);
+	if (!(data = (t_printf *)malloc(sizeof(t_printf))))
+		return (NULL);
+	data->i = 42;
+	data->ptr = NULL;
+	
+	return(data);
 }

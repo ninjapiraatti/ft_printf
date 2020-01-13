@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/13 10:24:42 by tlouekar         ###   ########.fr       */
+/*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
+/*   Updated: 2020/01/13 11:12:11 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_printf(const char *format, ...)
+int		parse(char *str)
 {
-	va_list	args;
+	char	*ptr;
 
-	va_start(args, format);
-	//vprintf(format, args);
-	parse((char *)format);
-	va_end(args);
+	ptr = (char *)str;
+
+	while (*ptr != 0)
+	{
+		if (*ptr == 92)
+		{
+			ptr++;
+			write(1, (char *)ptr, 1);
+			ptr++;
+		}
+		if (*ptr == 37)
+		{
+			ft_putstr(structurize(initialize(), ptr));
+			// write(1, (char *)ptr, 1);
+		}
+		write(1, (char *)ptr, 1);
+		ptr++;
+	}
+	write(1, (char *)ptr, 1);
 	return (0);
 }
