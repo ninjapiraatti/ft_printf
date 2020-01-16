@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/01/13 14:17:35 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/01/16 10:37:12 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS = 	srcs/ft_printf.c \
 		srcs/main.c \
 		srcs/display_c.c \
 		srcs/display_str.c \
+		srcs/preparser.c \
 		srcs/parser.c \
 		srcs/structurize.c \
 		srcs/initialize.c \
@@ -24,6 +25,7 @@ OBJS = 	ft_printf.o \
 		main.o \
 		display_c.o \
 		display_str.o \
+		preparser.o \
 		parser.o \
 		structurize.o \
 		initialize.o \

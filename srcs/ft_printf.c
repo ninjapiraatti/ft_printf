@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 09:50:36 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/16 10:34:36 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,18 @@ int			ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(args, format);
-	//vprintf(format, args);
 	traverse = (char *)format;
-	while (*traverse != '%')
+	while (traverse[i] != '\0')
 	{
-		ft_putstr(traverse);
-		//parse((char *)format);
-		c = va_arg(args, int);
-		ft_putchar((char)*traverse);
-		traverse++;
+		if (*traverse == '%' || *traverse == 92)
+		{
+			traverse = parse((char *)format, args);
+		}
+		else
+		{
+			ft_putchar((char)*traverse);
+			traverse++;
+		}
 	}
 	va_end(args);
 	return (0);
