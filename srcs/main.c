@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:17 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/13 10:33:10 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/16 09:32:42 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int		main(void)
 {
-	ft_printf("Hello %c\n", 'x');
+	ft_printf("Hello %c %c\n", 'x', 'k');
 	//printf("Hello %d\n\", 1);
 }

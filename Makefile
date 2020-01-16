@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/01/13 11:16:00 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/01/13 14:17:35 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJS = 	ft_printf.o \
 
 INCL = -I ./srcs -I ./libft/includes/
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 LIB = -L./libft -lft
 
@@ -41,6 +41,8 @@ $(NAME):
 	make -C libft
 	gcc $(CFLAGS) -c $(SRCS) $(INCS)
 	gcc $(CFLAGS) $(INCS) $(OBJS) $(LIB) -o $(NAME)
+
+debug:
 
 .PHONY: clean fclean re all
 

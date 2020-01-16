@@ -23,3 +23,7 @@ http://www.pixelbeat.org/programming/gcc/format_specs.html
 https://stackoverflow.com/questions/35791061/parameter-passing-with-ellipsis-in-c
 
 https://medium.com/my-journey-at-42-silicon-valley-as-a-non-cs-major/project-4-printf-function-6396c78ac22e
+
+http://www.firmcodes.com/write-printf-function-c/
+
+https://medium.com/@zhang.yine/ft-printf-d95747b7aa5a
