@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 12:48:18 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/16 14:49:28 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ char	*preparse(char *str, va_list *args)
 			parse(ptr, data);
 			//ft_putstr(structurize(initialize(), ptr));
 			//ft_putchar((char)*ptr++);
+			ft_putnbr(data->c);
+			ft_putnbr(data->d);
+			ft_putnbr(data->o);
+			ft_putnbr(data->s);
+			ft_putnbr(data->x);
 			ft_putchar(va_arg(*args, int));
 		}
 		ptr++;
