@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 10:38:38 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/16 12:48:18 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 char	*preparse(char *str, va_list *args)
 {
-	char	*ptr;
+	char		*ptr;
+	t_printf	*data;
 
 	ptr = (char *)str;
 
@@ -28,13 +29,13 @@ char	*preparse(char *str, va_list *args)
 		}
 		if (*ptr == '%')
 		{
-			ft_putstr(structurize(initialize(), ptr));
-
-			// write(1, (char *)ptr, 1);
+			data = initialize(ptr);
+			parse(ptr, data);
+			//ft_putstr(structurize(initialize(), ptr));
+			//ft_putchar((char)*ptr++);
+			ft_putchar(va_arg(*args, int));
 		}
-		write(1, (char *)ptr, 1);
 		ptr++;
 	}
-	write(1, (char *)ptr, 1);
 	return (ptr);
 }

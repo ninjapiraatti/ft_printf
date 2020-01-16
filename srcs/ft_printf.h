@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 10:36:50 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/16 12:34:47 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void			display_str(const char *str);
 int				ft_printf(const char *format, ...);
 char			*preparse(char *str, va_list *args);
 char			*structurize(t_printf *data, char *ptr);
-t_printf		*initialize(void);
+t_printf		*initialize(char *ptr);
 #endif
