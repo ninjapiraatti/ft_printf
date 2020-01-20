@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 14:43:30 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 13:04:51 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,17 @@
 # include <stdarg.h>
 # include <stdio.h> // REMOVE IT YOU DUMBASS
 
+static char			flags[19] = "0123456789#-+hl.* ";
+
 typedef	struct	s_printf
 {
+	int			zero;
+	int			plus;
+	int			minus;
+	int			space;
+	int			hash;
+	int			dot;
+	int			star;
 	int			c;
 	int			d;
 	int			o;
@@ -28,11 +37,12 @@ typedef	struct	s_printf
 	char		*ptr;
 }				t_printf;
 
+int				output(t_printf *data, va_list args);
 void			display_c(const char c);
 void			display_str(const char *str);
 int				ft_printf(const char *format, ...);
 char			*parse(char *str, t_printf *data);
-char			*preparse(char *str, va_list *args);
+char			*preparse(char *str, va_list args);
 char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
 #endif

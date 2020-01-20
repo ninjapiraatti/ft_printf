@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 12:23:35 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 13:41:53 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,15 @@ int			ft_printf(const char *format, ...)
 	traverse = (char *)format;
 	while (traverse[i] != '\0')
 	{
-		if (*traverse == '%' || *traverse == 92)
+		if (*traverse == '%' || *traverse == '\\') // Move the \\ to preparser?
 		{
-			traverse = preparse((char *)format, &args);
+			if (*traverse + 1 == '%')
+			{
+				traverse++;
+				write(1, (char *)traverse, 1);
+				break ;
+			}
+			traverse = preparse((char *)format, args);
 		}
 		else
 		{

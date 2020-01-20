@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:17 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 15:11:58 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 13:40:36 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int		main(void)
 {
-	ft_printf("Hello %c %x\n", 'x', 'k');
-	printf("\n\n");
-	printf("Hello %5d\n", 1);
+	ft_printf("This is displayed as is. Moving on to difficult stuff:\n");
+	ft_printf("Character: %c\n\nString: %s\n\nInt: %d", 'X', "Hello world.", 12345);
+	//printf("\n\n");
+	//printf("Hello %5d\n", 1);
 }
