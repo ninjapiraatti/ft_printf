@@ -6,34 +6,12 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/20 16:51:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 19:33:10 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// Chop will cut the string into the actual part that we want to handle.
-/*
-int		chop(char *str)
-{
-	int		i;
-
-	i = 1;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '%')
-		{
-			break ;
-		}
-		else if (str[i] == '"')
-		{
-			break ;
-		}
-		i++;
-	}
-	return (i);
-}
-*/
 
 void		flag_to_data(char *str, t_printf *data)
 {
@@ -56,10 +34,8 @@ void		flag_to_data(char *str, t_printf *data)
 char		*parse(char *str, t_printf *data)
 {
 	int		i;
-	//int		len;
 
 	i = 0;
-	//len = chop(str);
 	str++;
 	while (ft_strchr(flags, *str) != NULL)
 	{
