@@ -6,12 +6,11 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:17 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/20 15:41:30 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 16:53:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		main(void)
 {

@@ -6,12 +6,11 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/20 13:24:25 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/20 16:53:22 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int		output(t_printf *data, va_list args)
 {
