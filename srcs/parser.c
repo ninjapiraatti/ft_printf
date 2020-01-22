@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/22 13:02:11 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/22 13:12:07 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int			flag_to_data(char *str, t_printf *data)
 			data->zero = 1;
 		str++;
 	}
-	if(ft_isdigit(*(str)) == 1)
+	else if(ft_isdigit(*(str)) == 1)
 		return (enterpadding(str, data));
 	return (1);
 }

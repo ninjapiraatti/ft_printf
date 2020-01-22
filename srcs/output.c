@@ -6,11 +6,23 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/22 12:56:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/22 13:14:11 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	print_padding(int fw, int zero)
+{
+	while (fw > 0)
+	{
+		if (zero == 1)
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
+		fw--;
+	}
+}
 
 int		output(t_printf *data, va_list args)
 {
@@ -43,6 +55,7 @@ int		output(t_printf *data, va_list args)
 	ft_putstr("  fieldwidth:");
 	ft_putnbr(data->fieldwidth);
 	ft_putstr("\n---\n");
+	print_padding(data->fieldwidth, data->zero);
 	if (data->space == 1)
 	{
 		ft_putchar(' ');
