@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/01/20 12:32:26 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/01/22 13:27:48 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJS = 	ft_printf.o \
 
 INCL = -I ./srcs -I ./libft/includes/
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -g
 
 LIB = -L./libft -lft
 
