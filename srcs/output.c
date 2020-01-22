@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/20 16:53:22 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:56:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int		output(t_printf *data, va_list args)
 	ft_putnbr(data->dot);
 	ft_putstr("  star:");
 	ft_putnbr(data->star);
+	ft_putstr("  fieldwidth:");
+	ft_putnbr(data->fieldwidth);
 	ft_putstr("\n---\n");
 	if (data->space == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/20 16:41:47 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:38:51 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef	struct	s_printf
 	int			hash;
 	int			dot;
 	int			star;
+	int			fieldwidth;
 	int			c;
 	int			d;
 	int			o;
