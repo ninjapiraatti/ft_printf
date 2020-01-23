@@ -6,22 +6,28 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 14:13:17 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:35:04 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		print_padding(int fw, int zero, int len, int minus)
+void		print_padding(t_printf *data)
 {
-	fw = fw - len;
-	while (fw > 0)
+	int		i;
+
+	i = 0;
+	if (data->dot > 0)
+		i = data->fieldwidth - data->dot;
+	else
+		i = data->fieldwidth - data->len;
+	while (i > 0)
 	{
-		if (zero == 1 && minus == 0)
+		if (data->zero == 1 && data->minus == 0)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');
-		fw--;
+		i--;
 	}
 }
 
@@ -68,7 +74,7 @@ int			output(t_printf *data, char *arg, int debug)
 		ft_putchar('+');
 	}
 	if (data->minus == 0)
-		print_padding(data->fieldwidth, data->zero, data->len, data->minus);
+		print_padding(data);
 	if (data->space == 1)
 	{
 		ft_putchar(' ');
@@ -78,8 +84,8 @@ int			output(t_printf *data, char *arg, int debug)
 	if (data->d == 1)
 		ft_putchar('D');
 	if (data->s == 1)
-		ft_putstr(arg);
+		ft_putstr(ft_strsub(arg, 0, data->dot));
 	if (data->minus == 1)
-		print_padding(data->fieldwidth, data->zero, data->len, data->minus);
+		print_padding(data);
 	return (0);
 }

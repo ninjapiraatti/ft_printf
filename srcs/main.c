@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/01/23 13:01:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:39:03 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,6 @@
  	printf("'%-15.0006s'\n", str);
 
 	printf("\n---\n");
-
 
 	printf("'hello, %s.'\n", NULL);
 	ft_printf("'hello, %s.'\n", NULL);
