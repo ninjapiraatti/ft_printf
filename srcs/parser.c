@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 13:00:50 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 13:59:43 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			flag_to_data(char *str, t_printf *data)
 	return (1);
 }
 
-char		*parse(char *str, t_printf *data, va_list args)
+char		*parse(char *str, t_printf *data, char *arg)
 {
 	int		i;
 
@@ -80,7 +80,7 @@ char		*parse(char *str, t_printf *data, va_list args)
 	else if (*str == 's')
 	{
 		data->s = 1;
-		data->len = ft_strlen(va_arg(args, char *));
+		data->len = ft_strlen(arg);
 	}
 	else if (*str == 'x')
 		data->x = 1;

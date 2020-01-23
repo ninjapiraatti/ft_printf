@@ -6,13 +6,13 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 12:43:35 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:13:17 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_padding(int fw, int zero, int len, int minus)
+void		print_padding(int fw, int zero, int len, int minus)
 {
 	fw = fw - len;
 	while (fw > 0)
@@ -25,7 +25,7 @@ void	print_padding(int fw, int zero, int len, int minus)
 	}
 }
 
-int		output(t_printf *data, va_list args, int debug)
+int			output(t_printf *data, char *arg, int debug)
 {
 	if (debug == 1)
 	{
@@ -74,11 +74,11 @@ int		output(t_printf *data, va_list args, int debug)
 		ft_putchar(' ');
 	}
 	if (data->c == 1 || data->d == 1)
-		ft_putchar(va_arg(args, int));
+		ft_putchar(&arg[0]);
 	if (data->d == 1)
-		ft_putnbr(va_arg(args, int));  // NOPE
+		ft_putchar('D');
 	if (data->s == 1)
-		ft_putstr(va_arg(args, char *));
+		ft_putstr(arg);
 	if (data->minus == 1)
 		print_padding(data->fieldwidth, data->zero, data->len, data->minus);
 	return (0);
