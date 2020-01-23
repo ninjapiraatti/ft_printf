@@ -6,18 +6,18 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/22 13:12:07 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 13:00:50 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		enterpadding(char *str, t_printf *data)
+int		inject_int(char *str, t_printf *data, int *flag)
 {
 	int		i;
 
 	i = 0;
-	data->fieldwidth = ft_atoi((char *)str);
+	*flag = ft_atoi((char *)str);
 	while(ft_isdigit(*(str)) == 1)
 	{
 		str++;
@@ -40,7 +40,10 @@ int			flag_to_data(char *str, t_printf *data)
 	else if(*str == ' ')
 		data->space = 1;
 	else if(*str == '.')
-		data->dot = 1;
+	{
+		str++;
+		return (inject_int(str, data, &(data->dot)) + 1);
+	}
 	else if(*str == '*')
 		data->star = 1;
 	else if(*str == '0')
@@ -51,11 +54,11 @@ int			flag_to_data(char *str, t_printf *data)
 		str++;
 	}
 	else if(ft_isdigit(*(str)) == 1)
-		return (enterpadding(str, data));
+		return (inject_int(str, data, &(data->fieldwidth)));
 	return (1);
 }
 
-char		*parse(char *str, t_printf *data)
+char		*parse(char *str, t_printf *data, va_list args)
 {
 	int		i;
 
@@ -66,13 +69,19 @@ char		*parse(char *str, t_printf *data)
 		str += flag_to_data(str, data);
 	}
 	if (*str == 'c')
+	{
 		data->c = 1;
+		data->len = 1;
+	}
 	else if (*str == 'd')
 		data->d = 1;
 	else if (*str == 'o')
 		data->o = 1;
 	else if (*str == 's')
+	{
 		data->s = 1;
+		data->len = ft_strlen(va_arg(args, char *));
+	}
 	else if (*str == 'x')
 		data->x = 1;
 	return (str);

@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/22 12:38:33 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 09:40:41 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_printf		*initialize(char *ptr)
 	data->dot = 0;
 	data->star = 0;
 	data->fieldwidth = 0;
+	data->len = 0;
 	data->ptr = ptr;
 	
 	return(data);

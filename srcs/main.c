@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/01/22 13:29:11 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 13:01:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,18 @@
 
  	printf("Chars printed: %d\n", ft_printf("'%-010c'\n", c));
 	
- 	ft_printf("'%-*c'\n'%-10c'\n", 10, c, b);
- 	printf("'%-*c'\n'%-10c'\n", 10, c, b);
+ 	ft_printf("'%-10c'\n'%-10c'\n", c, b);
+ 	printf("'%-10c'\n'%-10c'\n", c, b);
 	
- 	ft_printf("'%*c'\n'%10c'\n", 10, c, b);
- 	printf("'%*c'\n'%10c'\n", 10, c, b);
+	printf("\n---\n");
 
- 	ft_printf("'%%%*c%%'\n'%%%10c%%'\n", 10, c, b);
- 	printf("'%%%*c%%'\n'%%%10c%%'\n", 10, c, b);
+ 	ft_printf("'%10c'\n'%10c'\n", c, b);
+ 	printf("'%10c'\n'%10c'\n", c, b);
+
+	printf("\n---\n");
+
+ 	ft_printf("'%%%10c%%'\n'%%%10c%%'\n", c, b);
+ 	printf("'%%%10c%%'\n'%%%10c%%'\n", c, b);
  }
 
  void	s(void)
@@ -72,23 +76,36 @@
 
  	char *str = "Hello World";
 
+ 	ft_printf("'%15.6s'\n", str);
+ 	printf("'%15.6s'\n", str);
+
+	printf("\n---\n");
+	
  	ft_printf("'%-015s'\n'%15c'\n", str, c);
  	printf("'%-015s'\n'%15c'\n", str, c);
+
+	printf("\n---\n");
 	
- 	ft_printf("'%-0*s'\n'%15c'\n", 15, str, c);
- 	printf("'%-0*s'\n'%15c'\n", 15, str, c);
+ 	ft_printf("'%-015s'\n'%15c'\n", str, c);
+ 	printf("'%-015s'\n'%15c'\n", str, c);
+
+	printf("\n---\n");
 	
  	ft_printf("'%15.s'\n", str);
  	printf("'%15.s'\n", str);
 
+	printf("\n---\n");
+
  	ft_printf("'%15.0s'\n", str);
  	printf("'%15.0s'\n", str);
+
+	printf("\n---\n");
 
  	ft_printf("'%-15.0006s'\n", str);
  	printf("'%-15.0006s'\n", str);
 
- 	ft_printf("'%*.6s'\n", 15, str);
- 	printf("'%*.6s'\n", 15, str);
+	printf("\n---\n");
+
 
 	printf("'hello, %s.'\n", NULL);
 	ft_printf("'hello, %s.'\n", NULL);
@@ -1273,7 +1290,7 @@ int main()
 
 	simple();
 	c();
-	// s();
+	s();
 	// p();
 	// id();
 	// o();
