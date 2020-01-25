@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 14:04:11 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/23 14:50:27 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*preparse(char *str, va_list args)
 	char		*arg;
 
 	ptr = (char *)str;
+
 	arg = va_arg(args, char *);
 	if (*ptr == '\\') // for escaping
 	{
@@ -30,6 +31,12 @@ char	*preparse(char *str, va_list args)
 	{
 		data = initialize(ptr);
 		ptr = parse(ptr, data, arg);
+		/*
+		if (validate(data, arg) == 0)
+		{
+			break;
+		}
+		*/
 		//ft_putstr(structurize(initialize(), ptr));
 		//ft_putchar((char)*ptr++);
 		output(data, arg, 0);
