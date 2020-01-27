@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 12:35:01 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 15:56:17 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void			con_p(t_printf *data, va_list args)
 {
-	ft_putchar(va_arg(args, char));
+	void		*pointer;
+
+	pointer = va_arg(args, void *);
+	ft_putstr(ft_itoa_base((unsigned long long)pointer, 16));
 }

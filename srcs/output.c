@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 13:23:08 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 15:50:35 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		print_padding(t_printf *data)
 
 	i = 0;
 	if (data->dot > 0)
-		i = data->fieldwidth - data->dot;
+		i = data->fieldwidth - data->prc;
 	else
 		i = data->fieldwidth - data->len;
 	while (i > 0)
@@ -41,10 +41,7 @@ void		print_con_spec(t_printf *data, va_list args)
 	if (data->s == 1)
 		ft_putstr(con_s(data, args));
 	if (data->p == 1)
-	{
 		con_p(data, args);
-		//ft_putstr(ft_itoa_base((unsigned long long)arg, 16));
-	}
 }
 
 int			output(t_printf *data, va_list args, int debug)
