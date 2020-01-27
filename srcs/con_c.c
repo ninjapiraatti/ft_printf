@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structurize.c                                      :+:      :+:    :+:   */
+/*   con_c.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 10:48:18 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/16 14:45:34 by tlouekar         ###   ########.fr       */
+/*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
+/*   Updated: 2020/01/27 12:29:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char		*structurize(t_printf *data, char *ptr)
+void			con_c(t_printf *data, va_list args)
 {
-	ft_putnbr(data->c);
-	return (ptr);
+	ft_putchar(va_arg(args, char));
 }

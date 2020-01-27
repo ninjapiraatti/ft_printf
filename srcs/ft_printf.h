@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 13:47:55 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 13:17:47 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct	s_printf
 	int			space;
 	int			hash;
 	int			dot;
+	int			prc;
 	int			star;
 	int			fieldwidth;
 	int			len;
@@ -36,14 +37,19 @@ typedef	struct	s_printf
 	int			o;
 	int			s;
 	int			x;
+	int			p;
 	char		*ptr;
 }				t_printf;
 
-int				output(t_printf *data, char *arg, int debug);
-void			display_c(const char c);
-void			display_str(const char *str);
+int				output(t_printf *data, va_list args, int debug);
+void			con_c(t_printf *data, va_list args);
+void			con_d(t_printf *data, va_list args);
+void			con_o(t_printf *data, va_list args);
+char			*con_s(t_printf *data, va_list args);
+void			con_x(t_printf *data, va_list args);
+void			con_p(t_printf *data, va_list args);
 int				ft_printf(const char *format, ...);
-char			*parse(char *str, t_printf *data, char *arg);
+char			*parse(char *str, t_printf *data);
 char			*preparse(char *str, va_list args);
 char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);

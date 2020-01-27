@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 13:59:43 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 13:24:37 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@ int			flag_to_data(char *str, t_printf *data)
 		data->space = 1;
 	else if(*str == '.')
 	{
+		data->dot = 1;
 		str++;
-		return (inject_int(str, data, &(data->dot)) + 1);
+		return (inject_int(str, data, &(data->prc)) + 1);
 	}
 	else if(*str == '*')
 		data->star = 1;
@@ -58,7 +59,7 @@ int			flag_to_data(char *str, t_printf *data)
 	return (1);
 }
 
-char		*parse(char *str, t_printf *data, char *arg)
+char		*parse(char *str, t_printf *data)
 {
 	int		i;
 
@@ -78,11 +79,10 @@ char		*parse(char *str, t_printf *data, char *arg)
 	else if (*str == 'o')
 		data->o = 1;
 	else if (*str == 's')
-	{
 		data->s = 1;
-		data->len = ft_strlen(arg);
-	}
 	else if (*str == 'x')
 		data->x = 1;
+	else if (*str == 'p')
+		data->p = 1;
 	return (str);
 }

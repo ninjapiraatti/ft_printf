@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/24 09:41:56 by tlouekar          #+#    #+#              #
-#    Updated: 2019/12/02 10:53:59 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/01/27 10:54:34 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ ft_memdel.c \
 ft_memcpy.c \
 ft_memcmp.c \
 ft_itoa.c \
+ft_itoa_base.c \
 ft_putendl.c \
 ft_putchar.c \
 ft_memmove.c \
@@ -98,6 +99,7 @@ ft_memdel.o \
 ft_memcpy.o \
 ft_memcmp.o \
 ft_itoa.o \
+ft_itoa_base.o \
 ft_putendl.o \
 ft_putchar.o \
 ft_memmove.o \

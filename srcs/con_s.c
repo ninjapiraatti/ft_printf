@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize.c                                       :+:      :+:    :+:   */
+/*   con_s.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 13:18:04 by tlouekar         ###   ########.fr       */
+/*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
+/*   Updated: 2020/01/27 13:12:56 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdlib.h>
 
-t_printf		*initialize(char *ptr)
+char			*con_s(t_printf *data, va_list args)
 {
-	t_printf	*data;
+	char		*str;
 
-	if (!(data = (t_printf *)malloc(sizeof(t_printf))))
-		return (NULL);
-	data->c = 0;
-	data->d = 0;
-	data->o = 0;
-	data->s = 0;
-	data->x = 0;
-	data->p = 0;
-	data->zero = 0;
-	data->plus = 0;
-	data->minus = 0;
-	data->space = 0;
-	data->hash = 0;
-	data->dot = 0;
-	data->prc = 0;
-	data->star = 0;
-	data->fieldwidth = 0;
-	data->len = 0;
-	data->ptr = ptr;
-	
-	return(data);
+	str = va_arg(args, char *);
+	if (data->dot > 0)
+		str = ft_strsub(str, 0, data->len);
+	return (str);
 }

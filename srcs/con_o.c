@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display_c.c                                        :+:      :+:    :+:   */
+/*   con_o.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/11 15:08:24 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 12:34:57 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			display_c(const char c)
+void			con_o(t_printf *data, va_list args)
 {
-	ft_putchar(c);
+	ft_putchar(va_arg(args, char));
 }
