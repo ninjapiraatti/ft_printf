@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/01/23 14:39:03 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 09:59:43 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@
  	int		a;
 
  	pointer = &test;
- 	//printf("0x%s\n", test = ft_itoa_base((unsigned long long)pointer, 16));
+ 	printf("0x%s\n", test = ft_itoa_base((unsigned long long)pointer, 16));
 	
  	ft_printf("\n****** TEST #1 ******\n\n");
  	ft_printf("'%p'\n", pointer);
@@ -1290,7 +1290,7 @@ int main()
 	simple();
 	c();
 	s();
-	// p();
+	p();
 	// id();
 	// o();
 	// u();

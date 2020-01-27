@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 14:35:04 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 09:34:38 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int			output(t_printf *data, char *arg, int debug)
 		ft_putnbr(data->len);
 		ft_putstr("\n---\n");
 	}
-	if (data->dot)
-		// Do perecision here
+	if (data->dot > 0)
+		data->len = data->dot;
 	if (data->plus == 1)
 	{
 		ft_putchar('+');
@@ -84,7 +84,7 @@ int			output(t_printf *data, char *arg, int debug)
 	if (data->d == 1)
 		ft_putchar('D');
 	if (data->s == 1)
-		ft_putstr(ft_strsub(arg, 0, data->dot));
+		ft_putstr(ft_strsub(arg, 0, data->len));
 	if (data->minus == 1)
 		print_padding(data);
 	return (0);

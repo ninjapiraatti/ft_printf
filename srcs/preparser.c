@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/23 14:50:27 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 09:56:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ char	*preparse(char *str, va_list args)
 	if (*ptr == '%')
 	{
 		data = initialize(ptr);
-		ptr = parse(ptr, data, arg);
-		/*
-		if (validate(data, arg) == 0)
+		if (arg == NULL)
 		{
-			break;
+			ft_putstr("(null)");
+			ptr++;
 		}
-		*/
+		else
+		{
+			ptr = parse(ptr, data, arg);
+			output(data, arg, 0);
+		}
 		//ft_putstr(structurize(initialize(), ptr));
 		//ft_putchar((char)*ptr++);
-		output(data, arg, 0);
 	}
 	ptr++;
 	return (ptr);
