@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 12:29:13 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 16:24:03 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,13 @@
 
 void			con_c(t_printf *data, va_list args)
 {
-	ft_putchar(va_arg(args, char));
+	char		c;
+
+	if(!(c = va_arg(args, char)))
+		data->len = 0;
+	else
+	{
+		data->len = 1;
+		ft_putchar(c);
+	}
 }

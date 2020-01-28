@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 15:50:35 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/27 16:19:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		print_padding(t_printf *data)
 void		print_con_spec(t_printf *data, va_list args)
 {
 	char	*str;
-	if (data->c == 1 || data->d == 1)
+	if (data->c == 1)
 		con_c(data, args);
 	if (data->d == 1)
 		con_d(data, args);
