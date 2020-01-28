@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/27 16:19:13 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/28 08:32:35 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,15 +87,11 @@ int			output(t_printf *data, va_list args, int debug)
 	if (data->dot > 0)
 		data->len = data->prc;
 	if (data->plus == 1)
-	{
 		ft_putchar('+');
-	}
 	if (data->minus == 0)
 		print_padding(data);
 	if (data->space == 1)
-	{
 		ft_putchar(' ');
-	}
 	print_con_spec(data, args);
 	if (data->minus == 1)
 		print_padding(data);
