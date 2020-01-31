@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/01/27 13:25:22 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/28 10:46:58 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,23 +129,37 @@
  	ft_printf("'%p'\n", pointer);
  	printf("'%p'\n", pointer);
 
+	printf("\n---\n");
+
  	ft_printf("'% p'\n", &test);
  	printf("'% p'\n", &test);
+
+	printf("\n---\n");
 
  	ft_printf("'%10 p'\n", &test);
  	printf("'%10 p'\n", &test);
 
+	printf("\n---\n");
+
  	ft_printf("'%15p'\n", &a);
  	printf("'%15p'\n", &a);
+
+	printf("\n---\n");
 
  	ft_printf("\nUNDEFINED BEHAVIOUR ZERO: \n'%020p'\n", &a);
  	printf("\nUNDEFINED BEHAVIOUR ZERO: \n'%020p'\n", &a);
 
+	printf("\n---\n");
+
  	ft_printf("\n'%-*p'\n", 20, &a);
  	printf("'%-*p'\n", 20, &a);
 
+	printf("\n---\n");
+
  	ft_printf("'%*p'\n", 20, &a);
  	printf("'%*p'\n", 20, &a);
+
+	printf("\n---\n");
 
  	ft_printf("'%*20.4p'\n", 20, &a);
  	printf("'%*20.4p'\n", 20, &test);

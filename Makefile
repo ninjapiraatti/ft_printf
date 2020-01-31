@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/01/27 12:37:26 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/01/28 10:45:11 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = 	srcs/ft_printf.c \
 		srcs/parser.c \
 		srcs/initialize.c \
 		srcs/output.c \
+		srcs/helpers.c \
 
 OBJS = 	ft_printf.o \
 		main.o \
@@ -37,6 +38,7 @@ OBJS = 	ft_printf.o \
 		parser.o \
 		initialize.o \
 		output.o \
+		helpers.o \
 
 
 INCL = -I ./srcs -I ./libft/includes/
