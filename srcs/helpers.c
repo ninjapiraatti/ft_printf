@@ -6,11 +6,30 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/28 10:44:41 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/31 12:22:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void		helper_print_padding(t_printf *data)
+{
+	int		i;
+
+	i = 0;
+	if (data->dot > 0)
+		i = data->fieldwidth - data->prc;
+	else
+		i = data->fieldwidth - data->len;
+	while (i > 0)
+	{
+		if (data->zero == 1 && data->minus == 0)
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
+		i--;
+	}
+}
 
 char		*helper_itoa_base(long value, int base)
 {

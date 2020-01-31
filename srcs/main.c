@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/01/28 10:46:58 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/01/31 12:14:18 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,8 +136,8 @@
 
 	printf("\n---\n");
 
- 	ft_printf("'%10 p'\n", &test);
- 	printf("'%10 p'\n", &test);
+ 	ft_printf("'%20 p'\n", &test);
+ 	printf("'%20 p'\n", &test);
 
 	printf("\n---\n");
 
