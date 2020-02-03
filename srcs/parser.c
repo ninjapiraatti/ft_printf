@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/28 08:29:52 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/03 11:45:20 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ char		*parse(char *str, t_printf *data)
 	}
 	else if (*str == 'd')
 		data->d = 1;
+	else if (*str == 'i')
+		data->i = 1;
 	else if (*str == 'o')
 		data->o = 1;
 	else if (*str == 's')

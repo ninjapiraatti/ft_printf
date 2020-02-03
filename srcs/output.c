@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/31 12:25:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/03 12:03:39 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		print_con_spec(t_printf *data, va_list args)
 {
 	if (data->c == 1)
 		con_c(data, args);
-	if (data->d == 1)
+	if (data->d == 1 || data->i == 1)
 		con_d(data, args);
 	if (data->s == 1)
 		ft_putstr(con_s(data, args));
@@ -33,6 +33,8 @@ int			output(t_printf *data, va_list args, int debug)
 		ft_putnbr(data->c);
 		ft_putstr("  d:");
 		ft_putnbr(data->d);
+		ft_putstr("  i:");
+		ft_putnbr(data->i);
 		ft_putstr("  o:");
 		ft_putnbr(data->o);
 		ft_putstr("  s:");
@@ -66,8 +68,6 @@ int			output(t_printf *data, va_list args, int debug)
 	}
 	if (data->dot > 0)
 		data->len = data->prc;
-	if (data->plus == 1)
-		ft_putchar('+');
 	print_con_spec(data, args);
 	if (data->minus == 1)
 		helper_print_padding(data);

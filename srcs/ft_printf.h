@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/01/31 12:21:40 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/03 11:44:48 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef	struct	s_printf
 	int			len;
 	int			c;
 	int			d;
+	int			i;
 	int			o;
 	int			s;
 	int			x;
