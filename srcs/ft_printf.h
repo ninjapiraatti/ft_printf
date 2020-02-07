@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/03 11:44:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/05 11:48:30 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,5 @@ char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
 char			*helper_itoa_base(long value, int base);
 void			helper_print_padding(t_printf *data);
+void			helper_handle_precision(t_printf *data);
 #endif
