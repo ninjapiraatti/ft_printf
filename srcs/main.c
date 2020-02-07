@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/02/03 10:32:26 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/07 16:49:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -263,8 +263,8 @@
  	printf("'%-+015.10hi.'\n", (short int)92);
 
  	ft_printf("\n****** TEST #19 ******\n\n");
- 	printf("'%-020.4lli'\n'%-10.5i'\n", lli_n, i_n);
  	ft_printf("'%-020.4lli'\n'%-10.5i'\n", lli_n, i_n);
+ 	printf("'%-020.4lli'\n'%-10.5i'\n", lli_n, i_n);
 	
 	
  	// LEFT ALIGNED TEST END

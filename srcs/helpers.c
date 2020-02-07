@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/05 12:38:43 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/07 17:03:42 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ void		helper_print_padding(t_printf *data)
 
 	i = 0;
 	if (data->dot > 0)
-		i = data->fieldwidth - data->prc; // This will not work in the end
+		i = data->fieldwidth - data->prc; // This will not work in the floats
 	else
 		i = data->fieldwidth - data->len;
+	if ((data->minus == 1 && data->plus == 1) || 
+	(data->lli < 0 && data->dot == 1))
+		i--;
 	while (i > 0)
 	{
 		if (data->zero == 1 && data->minus == 0)
@@ -37,8 +40,12 @@ void		helper_handle_precision(t_printf *data)
 
 	i = 0;
 	if (data->prc > data->len)
+	{
 		i = data->prc - data->len;
-	while (i >= 0)
+		if (data->space == 1)
+			i++;
+	}
+	while (i > 0)
 	{
 		ft_putchar('0');
 		i--;
