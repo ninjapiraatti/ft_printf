@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/07 16:02:21 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/10 13:13:26 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			con_d(t_printf *data, va_list args)
 	char		*str;
 
 	data->lli = (long long)va_arg(args, int);
-	str = helper_itoa_base(data->lli, 10);
+	str = helper_itoa_base(data->lli, 10, data);
 	data->len = ft_strlen(str);
 	if (data->plus == 1 && data->lli >= 0) 
 		ft_putchar('+');

@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/07 17:03:42 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/10 13:43:56 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void		helper_print_padding(t_printf *data)
 	int		i;
 
 	i = 0;
-	if (data->dot > 0)
-		i = data->fieldwidth - data->prc; // This will not work in the floats
-	else
-		i = data->fieldwidth - data->len;
+	/*if (data->dot > 0 && (data->i > 0 || data->d > 0))
+		i = data->fieldwidth - data->prc;
+	else*/
+	i = data->fieldwidth - data->len;
 	if ((data->minus == 1 && data->plus == 1) || 
 	(data->lli < 0 && data->dot == 1))
 		i--;
@@ -52,11 +52,12 @@ void		helper_handle_precision(t_printf *data)
 	}
 }
 
-char		*helper_itoa_base(long value, int base)
+char		*helper_itoa_base(long value, int base, t_printf *data)
 {
 	char	*s;
 	long	n;
 	int		i;
+	int		j;
 
 	n = (value < 0) ? -value : value;
 	i = 1;
@@ -65,10 +66,17 @@ char		*helper_itoa_base(long value, int base)
 	s = (char*)malloc(sizeof(char) * (i + 1));
 	s[i] = '\0';
 	n = (value < 0) ? -value : value;
+	if ((j = data->prc - i) < 0)
+		j = 0;
 	while (i--)
 	{
-		s[i] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
+		s[i + j] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
 		n /= base;
+	}
+	while (j > 0)
+	{
+		s[j - 1] = '0';
+		j--;
 	}
 	(i == 0) ? s[i] = '-' : 0;
 	return (s);

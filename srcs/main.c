@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/02/07 16:49:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/10 13:11:07 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -235,24 +235,24 @@
  	printf("'%-10 i'\n'%-10 lli'\n", i_n, lli_n);
 
  	ft_printf("\n****** TEST #12 ******\n\n");
- 	ft_printf("'%-10.5lld'\n'%-10.5d'\n", lli, i);
- 	printf("'%-10.5lld'\n'%-10.5d'\n", lli, i);
+ 	ft_printf("'%-10.3lld'\n'%-10.3d'\n", lli, i);
+ 	printf("'%-10.3lld'\n'%-10.3d'\n", lli, i);
 
  	ft_printf("\n****** TEST #13 ******\n\n");
  	ft_printf("'%-+10.5d'\n", i);
  	printf("'%-+10.5d'\n", i);
 
  	ft_printf("\n****** TEST #14 ******\n\n");
- 	ft_printf("'%-+60.20d'\n", i_n);
- 	printf("'%-+60.20d'\n", i_n);
+ 	ft_printf("'%-+60.17d'\n", i_n);
+ 	printf("'%-+60.17d'\n", i_n);
 
  	ft_printf("\n****** TEST #15 ******\n\n");
  	ft_printf("'%-10.5d'\n", i);
  	printf("'%-10.5d'\n", i);
 
  	ft_printf("\n****** TEST #16 ******\n\n");
- 	ft_printf("'%-010.5lld'\n'%-10.5d'\n", lli_n, i_n);
- 	printf("'%-010.5lld'\n'%-10.5d'\n", lli_n, i_n);
+ 	ft_printf("'%-012.4lld'\n'%-10.5d'\n", lli_n, i_n);
+ 	printf("'%-012.4lld'\n'%-10.5d'\n", lli_n, i_n);
 
  	ft_printf("\n****** TEST #17 ******\n\n");
  	ft_printf("'%-lld'\n'%-d'\n", lli, i);
@@ -319,8 +319,8 @@
  	printf("'%+010.5d'\n'%+010.5lld'\n", i, lli);
 
  	ft_printf("\n****** TEST #11 ******\n\n");
- 	ft_printf("'%+010.5d'\n'%+010.5lld'\n", i_n, lli_n);
- 	printf("'%+010.5d'\n'%+010.5lld'\n", i_n, lli_n);
+ 	ft_printf("'%+010.3d'\n'%+010.5lld'\n", i_n, lli_n);
+ 	printf("'%+010.3d'\n'%+010.5lld'\n", i_n, lli_n);
 	
  	ft_printf("\n****** TEST #12 ******\n\n");
  	ft_printf("'%+010d'\n'%+010lld'\n", i, lli);
