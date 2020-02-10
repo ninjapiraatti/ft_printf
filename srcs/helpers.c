@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/10 15:58:01 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/10 17:16:10 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ void		helper_print_padding(t_printf *data)
 	else*/
 	i = data->fieldwidth - data->len;
 	if ((data->minus == 1 && data->plus == 1) || 
-	(data->lli < 0 && data->dot == 1))
+	(data->lli < 0 && data->dot == 1) ||
+	(data->minus == 0 && data->plus == 1))
 		i--;
 	while (i > 0)
 	{
-		if (data->zero == 1 && data->minus == 0)
+		if (data->zero == 1 && data->minus == 0
+		&& data->plus == 0)
 			ft_putchar('0');
 		else
 			ft_putchar(' ');
@@ -66,8 +68,14 @@ char		*helper_itoa_base(long long value, int base, t_printf *data)
 	s = (char*)malloc(sizeof(char) * (i + 1));
 	s[i] = '\0';
 	n = (value < 0) ? -value : value;
-	if ((j = data->prc - i) < 0)
+	if ((j = data->fieldwidth - data->prc - i) < 0)
 		j = 0;
+	else if ((j = data->prc - i) < 0)
+		j = 0;
+	printf("%d\n", data->fieldwidth);
+	printf("%d\n", data->prc);
+	printf("%d\n", data->i);
+	printf("%d\n", j);
 	while (i--)
 	{
 		s[i + j] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
