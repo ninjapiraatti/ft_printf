@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/10 17:16:10 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/14 13:32:20 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,16 @@ char		*helper_itoa_base(long long value, int base, t_printf *data)
 	n = (value < 0) ? -value : value;
 	if ((j = data->fieldwidth - data->prc - i) < 0)
 		j = 0;
-	else if ((j = data->prc - i) < 0)
+	else if ((data->prc - i < 0) && (data->zero == 0))
 		j = 0;
-	printf("%d\n", data->fieldwidth);
+	else if (data->prc == 0)
+		j = data->fieldwidth - i - 1;
+	else
+		j = data->prc - i;
+	/*printf("%d\n", data->fieldwidth);
 	printf("%d\n", data->prc);
-	printf("%d\n", data->i);
-	printf("%d\n", j);
+	printf("%d\n", data->zero);
+	printf("%d\n", j);*/
 	while (i--)
 	{
 		s[i + j] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
