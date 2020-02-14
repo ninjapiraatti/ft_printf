@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/10 15:58:14 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/14 14:17:28 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef	struct	s_printf
 	int			s;
 	int			x;
 	int			p;
+	int			j;
 	char		*ptr;
 }				t_printf;
 

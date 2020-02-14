@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/14 13:41:13 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/14 14:40:11 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,6 @@ void			con_d(t_printf *data, va_list args)
 		ft_putchar('+');
 	if (data->lli < 0)
 		ft_putchar('-');
-	if (data->space == 1)
-	{
-		if (data->plus == 1 && data->minus == 1)
-			;
-		else if (data->minus == 1 && data->fieldwidth == 0 && data->lli < 0)
-			data->len += 1;
-		else if (data->minus == 1 && data->lli >= 0)
-		{
-			data->len += 1;
-			ft_putchar(' ');
-		}
-		else if (data->minus == 1)
-			data->len += 1;
-		else if (data->plus == 1 || data->lli < 0)
-			;
-		else if (data->fieldwidth == 0)
-			ft_putchar(' ');
-	}
+	helper_zeros_spaces(data);
 	ft_putstr(str);
-	printf("just testing that git works");
 }

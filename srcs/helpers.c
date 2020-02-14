@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/14 13:32:20 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/14 14:34:38 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,44 @@ void		helper_print_padding(t_printf *data)
 		&& data->plus == 0)
 			ft_putchar('0');
 		else
-			ft_putchar(' ');
+			ft_putchar('x');
 		i--;
+	}
+}
+
+/*
+Precision helper works currently for i/d only
+*/
+
+void		helper_zeros_spaces(t_printf *data)
+{
+	if (data->space == 1)
+	{
+		if (data->plus == 1 && data->minus == 1)
+			;
+		else if (data->minus == 1 && data->fieldwidth == 0 && data->lli < 0)
+			data->len += 1;
+		else if (data->minus == 1 && data->lli >= 0)
+		{
+			data->len += 1;
+			ft_putchar(' ');
+		}
+		else if (data->minus == 1)
+			data->len += 1;
+		else if (data->plus == 1 || data->lli < 0)
+			;
+		else if (data->fieldwidth == 0)
+			ft_putchar(' ');
 	}
 }
 
 void		helper_handle_precision(t_printf *data)
 {
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	if (data->prc > data->len)
 	{
 		i = data->prc - data->len;
@@ -52,6 +80,14 @@ void		helper_handle_precision(t_printf *data)
 		ft_putchar('0');
 		i--;
 	}
+	if (data->fieldwidth - data->prc - i < 0)
+		j = 0;
+	else if ((data->prc - i < 0) && (data->zero == 0))
+		j = 0;
+	else if (data->prc == 0)
+		j = data->fieldwidth - i - 1;
+	else
+		j = data->prc - i;
 }
 
 char		*helper_itoa_base(long long value, int base, t_printf *data)
@@ -59,7 +95,6 @@ char		*helper_itoa_base(long long value, int base, t_printf *data)
 	char		*s;
 	long long	n;
 	int			i;
-	int			j;
 
 	n = (value < 0) ? -value : value;
 	i = 1;
@@ -68,28 +103,10 @@ char		*helper_itoa_base(long long value, int base, t_printf *data)
 	s = (char*)malloc(sizeof(char) * (i + 1));
 	s[i] = '\0';
 	n = (value < 0) ? -value : value;
-	if ((j = data->fieldwidth - data->prc - i) < 0)
-		j = 0;
-	else if ((data->prc - i < 0) && (data->zero == 0))
-		j = 0;
-	else if (data->prc == 0)
-		j = data->fieldwidth - i - 1;
-	else
-		j = data->prc - i;
-	/*printf("%d\n", data->fieldwidth);
-	printf("%d\n", data->prc);
-	printf("%d\n", data->zero);
-	printf("%d\n", j);*/
 	while (i--)
 	{
-		s[i + j] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
+		s[i] = (n % base < 10) ? n % base + '0' : n % base + 'a' - 10;
 		n /= base;
 	}
-	while (j > 0)
-	{
-		s[j - 1] = '0';
-		j--;
-	}
-	(i == 0) ? s[i] = '-' : 0;
 	return (s);
 }
