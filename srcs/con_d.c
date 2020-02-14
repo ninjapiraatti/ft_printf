@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/14 13:38:08 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/14 13:41:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ void			con_d(t_printf *data, va_list args)
 			ft_putchar(' ');
 	}
 	ft_putstr(str);
+	printf("just testing that git works");
 }
