@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/17 08:44:55 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/17 09:13:21 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef	struct	s_printf
 	int			fieldwidth;
 	int			len;
 	long long	lli;
+	long double	flo;
 	int			c;
 	int			d;
 	int			i;
@@ -40,7 +41,7 @@ typedef	struct	s_printf
 	int			s;
 	int			x;
 	int			p;
-	int			j;
+	int			f;
 	char		*ptr;
 }				t_printf;
 
@@ -51,6 +52,7 @@ void			con_o(t_printf *data, va_list args);
 char			*con_s(t_printf *data, va_list args);
 void			con_x(t_printf *data, va_list args);
 void			con_p(t_printf *data, va_list args);
+void			con_f(t_printf *data, va_list args);
 int				ft_printf(const char *format, ...);
 char			*parse(char *str, t_printf *data);
 char			*preparse(char *str, va_list args);
