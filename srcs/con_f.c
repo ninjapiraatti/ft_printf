@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/17 09:13:39 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/19 12:30:19 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,16 @@ void			con_f(t_printf *data, va_list args)
 	char		*str;
 
 	if (data->star == 1)
-		data->fieldwidth = va_arg(args, int);
+	{
+		if (data->dot == 1)
+			data->prc = va_arg(args, int);
+		else
+			data->fieldwidth = va_arg(args, int);
+	}
 	data->flo = va_arg(args, long double);
-	str = ftoa(data->lli, 10, data);
+	if (data->dot == 0)
+		data->prc = 6;
+	str = ftoa(data->flo, data);
 	data->len = ft_strlen(str);
 	if (data->minus == 0)
 		helper_print_padding(data);
