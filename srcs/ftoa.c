@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 08:33:06 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/19 16:57:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/21 13:34:39 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char		*ftoa(long double value, t_printf *data)
 	i++;
 	while (i < len)
 	{
-		ds *= 10.0;
+		ds *= 10;
 		str[i] = (long long)ds + '0';
 		ds -= (long long)ds;
 		i++;
