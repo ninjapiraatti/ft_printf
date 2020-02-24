@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/19 10:33:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/24 12:15:47 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void		print_con_spec(t_printf *data, va_list args)
 		ft_putstr(con_s(data, args));
 	if (data->p == 1)
 		con_p(data, args);
-	if (data->f == 1)
+	if (data->f == 1 || data->lf == 1)
 		con_f(data, args);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 08:33:06 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/24 10:54:28 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/24 13:29:50 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ long double		addfive(long double value, t_printf *data)
 	return (value + five);
 }
 
-char			*round(long double ds, int start, char *str, t_printf *data)
+char			*roundme(long double ds, int start, char *str, t_printf *data)
 {
 	int			i;
 
@@ -66,7 +66,7 @@ char			*ftoa(long double value, t_printf *data)
 		i = ft_strlen(str);
 		str[i] = '.';
 		i++;
-		return (round(ds, i, str, data));
+		return (roundme(ds, i, str, data));
 	}
 	return (str);
 }

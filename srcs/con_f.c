@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/19 12:30:19 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/24 12:12:42 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ void			con_f(t_printf *data, va_list args)
 		else
 			data->fieldwidth = va_arg(args, int);
 	}
-	data->flo = va_arg(args, long double);
+	if (data->lf == 1)
+		data->flo = va_arg(args, long double);
+	else
+		data->flo = va_arg(args, double);
 	if (data->dot == 0)
 		data->prc = 6;
 	str = ftoa(data->flo, data);

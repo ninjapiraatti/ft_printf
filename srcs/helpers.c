@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/19 16:59:34 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/24 13:31:44 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,18 @@ void		helper_print_padding(t_printf *data)
 	i = data->fieldwidth - data->len;
 	if ((data->minus == 1 && data->plus == 1) || 
 	(data->lli < 0 && data->dot == 1) ||
-	(data->minus == 0 && data->plus == 1))
+	(data->minus == 0 && data->plus == 1) ||
+	(data->minus == 1 && data->flo < 0))
 		i--;
 	if (data->prc > data->len)
 		i -= data->prc - data->len;
 	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && data->dot == 0)
 		i = 0;
+	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && data->flo > 0)
+		i = 0;
 	while (i > 0)
 	{
-		if (data->zero == 1 && data->minus == 0
-		&& data->plus == 0)
-			ft_putchar(' ');
-		else
-			ft_putchar(' ');
+		ft_putchar(' ');
 		i--;
 	}
 }
@@ -46,7 +45,7 @@ void		helper_zeros_spaces(t_printf *data)
 			;
 		else if (data->minus == 1 && data->fieldwidth == 0 && data->lli < 0)
 			data->len += 1;
-		else if (data->minus == 1 && data->lli >= 0)
+		else if (data->minus == 1 && (data->lli >= 0 && data->flo >= 0))
 		{
 			data->len += 1;
 			ft_putchar(' ');
@@ -55,7 +54,7 @@ void		helper_zeros_spaces(t_printf *data)
 			data->len += 1;
 		else if (data->plus == 1 || data->lli < 0)
 			;
-		else if (data->fieldwidth == 0)
+		else if (data->fieldwidth == 0 && data->flo >= 0)
 			ft_putchar(' ');
 	}
 }
@@ -85,7 +84,7 @@ void		helper_prc_zeros(t_printf *data)
 		if (data->space == 1 && data->minus == 1)
 			i++;
 	}
-	else if (data->dot == 0 && data->zero == 1 && data->minus == 0)
+	else if ((data->dot == 0 || data->flo > 0) && data->zero == 1 && data->minus == 0)
 	{
 		i = data->fieldwidth - data->len;
 		if (data->lli < 0 || data->plus == 1)
