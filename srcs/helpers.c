@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/24 20:11:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/26 15:02:15 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ void		helper_prc_zeros(t_printf *data)
 		if (data->space == 1 && data->minus == 1)
 			i++;
 	}
-	else if ((data->dot == 0 || data->flo > 0) && data->zero == 1 && data->minus == 0)
+	else if ((data->dot == 0 || data->lf == 1 || data->f == 1) && data->zero == 1 && data->minus == 0)
 	{
 		i = data->fieldwidth - data->len;
-		if (data->lli < 0 || data->plus == 1)
+		if (data->lli < 0 || data->plus == 1 || data->flo < 0)
 			i--;
 	}
 	while (i > 0)

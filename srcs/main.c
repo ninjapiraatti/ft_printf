@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/02/24 13:04:43 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/02/26 14:55:41 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -985,9 +985,9 @@ void	f(void)
 	double f_n = -432232342.01938409238;
 	long double tf = 13.995;
 
-	ft_printf("\n****** TEST #15 ******\n\n");
- 	ft_printf("'% f'\n'% Lf'\n", f_n, lf_n);
- 	printf("'% f'\n'% Lf'\n", f_n, lf_n);
+	ft_printf("\n****** TEST #30 ******\n\n");
+	ft_printf("'%020.4Lf'\n'%10.5f'\n", lf_n, f_n);
+ 	printf("'%020.4Lf'\n'%10.5f'\n", lf_n, f_n);
 
 	ft_printf("\n****** TEST ZERO ******\n\n");
 	ft_printf("'%.3Lf'\n", tf);
