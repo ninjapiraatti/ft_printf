@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/03/06 14:15:17 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/03/06 14:49:46 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ void			con_o(t_printf *data, va_list args)
 			data->fieldwidth = va_arg(args, int);
 	data->lli = (unsigned int)va_arg(args, int);
 	str = helper_itoa_base((unsigned long long)data->lli, 8, data);
-	data->len = ft_strlen(str) + 2;
+	data->len = ft_strlen(str);
 	if (data->minus == 0)
 		helper_print_padding(data);
+	helper_plusminus(data);
+	helper_prc_zeros(data);
 	ft_putstr(str);
 }

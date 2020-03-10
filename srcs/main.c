@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/03/06 13:30:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/03/06 14:47:49 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -429,10 +429,6 @@
  	ft_printf("\n****** TEST #10 ******\n\n");
  	ft_printf("'%-+#50.30o'\n'%-+#50.30llo'\n", i, lli);
  	printf("'%-+#50.30o'\n'%-+#50.30llo'\n", i, lli);
-	
- 	ft_printf("\n****** TEST #10 ******\n\n");
- 	ft_printf("'%-+50.30o'\n'%-+50.30llo'\n", i, lli);	
- 	printf("'%-+50.30o'\n'%-+50.30llo'\n", i, lli);	
 
  	ft_printf("\n****** TEST #11 ******\n\n");
  	ft_printf("'%-+#050.30o'\n'%-+#050.30llo'\n", i, lli);
