@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/03/10 11:43:14 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/07 17:10:34 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,12 @@ void		helper_zeros_spaces(t_printf *data)
 
 void		helper_plusminus(t_printf *data)
 {
-	if (data->plus == 1 && data->lli >= 0 && data->flo >= 0) 
+	if (data->plus == 1 && data->lli >= 0 && data->flo >= 0 && data->o != 1) 
 		ft_putchar('+');
 	if (data->lli < 0 || data->flo < 0)
 		ft_putchar('-');
+	if (data->o == 1 && data->hash == 1)
+		ft_putchar('0');
 }
 
 /*
