@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/07 17:10:34 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 10:15:02 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		helper_plusminus(t_printf *data)
 		ft_putchar('+');
 	if (data->lli < 0 || data->flo < 0)
 		ft_putchar('-');
-	if (data->o == 1 && data->hash == 1)
+	if (data->o == 1 && data->hash == 1 && data->prc == 0)
 		ft_putchar('0');
 }
 
