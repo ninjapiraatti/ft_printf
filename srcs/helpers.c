@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/10 10:15:02 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 11:29:25 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void		helper_print_padding(t_printf *data)
 
 	i = 0;
 	i = data->fieldwidth - data->len;
-	if ((data->minus == 1 && data->plus == 1) || 
+	if (data->o != 1 && ((data->minus == 1 && data->plus == 1) || 
 	(data->lli < 0 && data->dot == 1) ||
 	(data->minus == 0 && data->plus == 1) ||
-	(data->minus == 1 && data->flo < 0))
+	(data->minus == 1 && data->flo < 0)))
 		i--;
 	if (data->prc > data->len)
 		i -= data->prc - data->len;

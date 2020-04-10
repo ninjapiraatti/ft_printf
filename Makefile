@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/02/19 10:36:28 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/04/10 11:41:05 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS = 	srcs/ft_printf.c \
 		srcs/con_c.c \
 		srcs/con_d.c \
 		srcs/con_o.c \
+		srcs/con_u.c \
 		srcs/con_p.c \
 		srcs/con_s.c \
 		srcs/con_x.c \
@@ -33,6 +34,7 @@ OBJS = 	ft_printf.o \
 		con_c.o \
 		con_d.o \
 		con_o.o \
+		con_u.o \
 		con_p.o \
 		con_s.o \
 		con_x.o \

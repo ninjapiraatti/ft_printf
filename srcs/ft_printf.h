@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/24 12:04:03 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 11:33:01 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef	struct	s_printf
 	int			d;
 	int			i;
 	int			o;
+	int			u;
 	int			s;
 	int			x;
 	int			p;
@@ -50,6 +51,7 @@ int				output(t_printf *data, va_list args, int debug);
 void			con_c(t_printf *data, va_list args);
 void			con_d(t_printf *data, va_list args);
 void			con_o(t_printf *data, va_list args);
+void			con_u(t_printf *data, va_list args);
 char			*con_s(t_printf *data, va_list args);
 void			con_x(t_printf *data, va_list args);
 void			con_p(t_printf *data, va_list args);
