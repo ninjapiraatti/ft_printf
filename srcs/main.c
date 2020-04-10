@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/04/10 12:26:58 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 16:07:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1312,10 +1312,10 @@ int main()
 	//p();
 	//id();
 	//o();
-	//u();
-	x();
+	u();
+	//x();
 	//f();	
 	//bonus();
-	//system("leaks ft_printf");
+	system("leaks libftprintf");
 	return (0);
 }

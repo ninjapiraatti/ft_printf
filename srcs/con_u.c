@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/10 11:41:50 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 16:00:50 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void			con_u(t_printf *data, va_list args)
 
 	if (data->star == 1)
 		data->fieldwidth = va_arg(args, int);
-	data->lli = (long long)va_arg(args, int);
+	data->lli = (long long)va_arg(args, long long);
 	str = helper_itoa_base(data->lli, 10, data);
 	data->len = ft_strlen(str);
 	if (data->minus == 0)
