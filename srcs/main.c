@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/04/10 16:59:45 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/10 17:07:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -769,6 +769,10 @@
  	unsigned long long int lli_n = -55165;
  	int	i_n = -3;
 
+	ft_printf("\n****** TEST #A ******\n\n");
+ 	ft_printf("%5.x", 0);
+ 	printf("%5.x", 0);
+
  	ft_printf("\n****** TEST #1 ******\n\n");
  	ft_printf("'%-x'\n'%-x'\n", i, i_n);
  	printf("'%-x'\n'%-x'\n", i, i_n);
@@ -1294,7 +1298,7 @@ void	bonus()
 	ft_printf("\n****** TEST #19 STAR & SIZE_T ******\n\n");
  	ft_printf("'%-+030.*zu.'\n", 20, (size_t)42);
  	printf("'%-+030.*zu.'\n", 20, (size_t)42);
-	 
+
 	ft_printf("\n****** TEST #20 STAR & SIZE_T ******\n\n");
  	ft_printf("'%+030.*zd.'\n", 20, (size_t)42);
  	printf("'%+030.*zd.'\n", 20, (size_t)42);
@@ -1312,8 +1316,8 @@ int main()
 	//p();
 	//id();
 	//o();
-	u();
-	//x();
+	//u();
+	x();
 	//f();	
 	//bonus();
 	//system("leaks libftprintf");
