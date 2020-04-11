@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/24 12:12:42 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/11 17:43:06 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void			con_f(t_printf *data, va_list args)
 		else
 			data->fieldwidth = va_arg(args, int);
 	}
-	if (data->lf == 1)
-		data->flo = va_arg(args, long double);
+	if (data->lod == 1)
+		data->flo = va_arg(args, long double); // This used to be long double but that don't work for some reason
 	else
 		data->flo = va_arg(args, double);
 	if (data->dot == 0)

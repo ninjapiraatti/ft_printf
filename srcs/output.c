@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/10 14:51:25 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/11 16:17:36 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,24 @@ void		print_con_spec(t_printf *data, va_list args)
 {
 	if (data->c == 1)
 		con_c(data, args);
-	if (data->d == 1 || data->i == 1)
+	else if (data->d == 1 || data->i == 1)
 		con_d(data, args);
-	if (data->s == 1)
-		ft_putstr(con_s(data, args));
-	if (data->p == 1)
+	else if (data->s == 1)
+		con_s(data, args);
+	else if (data->p == 1)
 		con_p(data, args);
-	if (data->o == 1)
+	else if (data->o == 1)
 		con_o(data, args);
-	if (data->u == 1)
+	else if (data->u == 1)
 		con_u(data, args);
-	if (data->x == 1 || data->X == 1)
+	else if (data->x == 1 || data->X == 1)
 		con_x(data, args);
-	if (data->f == 1 || data->lf == 1)
+	else if (data->f == 1)
 		con_f(data, args);
+	else {
+		helper_print_padding(data);
+		helper_prc_zeros(data);
+	}
 }
 
 int			output(t_printf *data, va_list args, int debug)
@@ -72,6 +76,9 @@ int			output(t_printf *data, va_list args, int debug)
 		ft_putnbr(data->fieldwidth);
 		ft_putstr("  len:");
 		ft_putnbr(data->len);
+		ft_putstr("\n---\n");
+		ft_putstr("  lo:");
+		ft_putnbr(data->lo);
 		ft_putstr("\n---\n");
 	}
 	if (data->dot > 0)

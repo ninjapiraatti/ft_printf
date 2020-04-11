@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/10 14:49:34 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/11 17:35:28 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int			flag_to_data(char *str, t_printf *data)
 		data->minus = 1;
 	else if(*str == '#')
 		data->hash = 1;
+	else if(*str == 'L')
+		data->lod = 1;
+	else if(*str == 'l')
+		data->lo = 1;
 	else if(*str == ' ')
 		data->space = 1;
 	else if(*str == '.')
@@ -66,14 +70,9 @@ char		*parse(char *str, t_printf *data)
 	i = 0;
 	str++;
 	while (ft_strchr(flags, *str) != NULL)
-	{
 		str += flag_to_data(str, data);
-	}
 	if (*str == 'c')
-	{
 		data->c = 1;
-		data->len = 1;
-	}
 	else if (*str == 'd')
 		data->d = 1;
 	else if (*str == 'i')
@@ -90,11 +89,6 @@ char		*parse(char *str, t_printf *data)
 		data->X = 1;
 	else if (*str == 'p')
 		data->p = 1;
-	else if (*str == 'L')
-	{
-		data->lf = 1;
-		str++;
-	}
 	else if (*str == 'f')
 		data->f = 1;
 	return (str);

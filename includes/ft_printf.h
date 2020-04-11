@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/10 14:49:53 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/11 17:34:35 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h> // REMOVE IT YOU DUMBASS
 
-static char			flags[19] = "0123456789#-+hl.* ";
+static char			flags[19] = "0123456789#-+hlL.* ";
 
 typedef	struct	s_printf
 {
@@ -44,7 +44,8 @@ typedef	struct	s_printf
 	int			X;
 	int			p;
 	int			f;
-	int			lf;
+	int			lo;
+	int			lod;
 	char		*ptr;
 }				t_printf;
 
@@ -53,7 +54,7 @@ void			con_c(t_printf *data, va_list args);
 void			con_d(t_printf *data, va_list args);
 void			con_o(t_printf *data, va_list args);
 void			con_u(t_printf *data, va_list args);
-char			*con_s(t_printf *data, va_list args);
+void			con_s(t_printf *data, va_list args);
 void			con_x(t_printf *data, va_list args);
 void			con_p(t_printf *data, va_list args);
 void			con_f(t_printf *data, va_list args);

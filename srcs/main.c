@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/04/10 17:07:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/04/11 17:42:37 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -769,10 +769,6 @@
  	unsigned long long int lli_n = -55165;
  	int	i_n = -3;
 
-	ft_printf("\n****** TEST #A ******\n\n");
- 	ft_printf("%5.x", 0);
- 	printf("%5.x", 0);
-
  	ft_printf("\n****** TEST #1 ******\n\n");
  	ft_printf("'%-x'\n'%-x'\n", i, i_n);
  	printf("'%-x'\n'%-x'\n", i, i_n);
@@ -1304,6 +1300,39 @@ void	bonus()
  	printf("'%+030.*zd.'\n", 20, (size_t)42);
 }
 
+void	tlouekar()
+{
+	ft_printf("\n******************  MY TESTS ******************\n\n");
+
+	ft_printf("\n****** TEST #1 ******\n\n");
+ 	ft_printf("'this %#x number'\n", 0);
+ 	printf("'this %#x number'\n", 0);
+
+	ft_printf("\n****** TEST #2 ******\n\n");
+ 	ft_printf("'%5%'\n"); // Undefined behavior, don't need to fix
+ 	printf("'%5%'\n");
+
+	ft_printf("\n****** TEST #3 ******\n\n");
+ 	ft_printf("'%-5.x'\n", 0);
+ 	printf("'%-5.x'\n", 0);
+
+	ft_printf("\n****** TEST #4 ******\n\n");
+ 	ft_printf("'%#05X'\n", 43);
+ 	printf("'%#05X'\n", 43);
+
+	ft_printf("\n****** TEST #5 ******\n\n");
+ 	ft_printf("'%#-8.5X'\n", 0);
+ 	printf("'%#-8.5X'\n", 0);
+
+	ft_printf("\n****** TEST #6 ******\n\n");
+ 	ft_printf("'%20li'\n", 22337203685477);
+ 	printf("'%20li'\n", 22337203685477);
+
+	ft_printf("\n****** TEST #7 ******\n\n");
+ 	ft_printf("'%Lf'\n", 22.337203685477l);
+ 	printf("'%Lf'\n", 22.337203685477l);
+}
+
 int main()
 {
 	/*
@@ -1317,9 +1346,10 @@ int main()
 	//id();
 	//o();
 	//u();
-	x();
+	//x();
 	//f();	
 	//bonus();
+	tlouekar();
 	//system("leaks libftprintf");
 	return (0);
 }
