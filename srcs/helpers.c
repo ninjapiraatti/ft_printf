@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/02 14:52:46 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/02 17:50:36 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,13 @@ void		helper_spaces(t_printf *data)
 {
 	if (data->space == 1)
 	{
-		if (data->plus == 1 && data->minus == 1)
-			;
-		else if (data->minus == 1 && data->fieldwidth == 0 && data->lli < 0)
-			data->len += 1;
-		else if (data->minus == 1 && (data->lli >= 0 && data->flo >= 0))
+		if (data->plus == 0 && data->lli >= 0 && data->flo >= 0)
 		{
-			data->len += 1;
-			ft_putchar(' ');
+			if (data->fieldwidth <= data->len)
+				ft_putchar(' ');
+			//else if (data->dot == 1)
+			//	ft_putchar(' ');
 		}
-		else if (data->plus == 1 || data->lli < 0 || data->fieldwidth > data->len || data->flo < 0)
-			;
-		else if (data->minus == 1)
-			data->len += 1;
-		else if ((data->fieldwidth == 0 && data->flo >= 0) ||
-		(data->fieldwidth > 0 && data->dot == 0) ||
-		(data->dot == 1 && (data->lli == 0 || data->prc > 0)))
-			ft_putchar(' ');
 	}
 }
 
