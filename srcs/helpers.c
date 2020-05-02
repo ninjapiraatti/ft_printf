@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/02 12:00:49 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/02 14:02:49 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,8 @@ void		helper_print_padding(t_printf *data)
 		i = 0;
 	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && (data->f == 1 || data->lo == 1))
 		i = 0;
-	if ((data->x == 1 || data->X == 1) && data->hash == 1)
+	if ((data->x == 1 || data->X == 1) && data->hash == 1 && data->lli != 0)
 		i -= 2;
-	//if (data->dot == 1 && data->lli == 0 && data->prc == 0)
-	//	i++;
 	while (i > 0)
 	{
 		ft_putchar(' ');
@@ -84,13 +82,11 @@ void		helper_plusminus(t_printf *data)
 		ft_putchar('+');
 	if (data->lli < 0 || data->flo < 0)
 		ft_putchar('-');
-	if (data->o == 1 && data->hash == 1 && data->prc == 0)
-		ft_putchar('0');
 }
 
 /*
 Precision helper is probably fucked
-First line of code: {return test("%.0i", 0);}
+First line of code: {return test("%#3.3o", 6983);}
 */
 void		helper_prc_zeros(t_printf *data)
 {
@@ -99,6 +95,12 @@ void		helper_prc_zeros(t_printf *data)
 
 	i = 0;
 	j = 0;
+	if (data->hash == 1 && data->o == 1)
+	{
+		if ((data->prc == 0 && data->lli != 0) ||
+		(data->len >= data->prc)) 
+			i++;
+	}
 	if (data->prc > data->len)
 	{
 		i = data->prc - data->len;
