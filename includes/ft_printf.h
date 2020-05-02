@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/11 17:34:35 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/01 21:54:21 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include <stdio.h> // REMOVE IT YOU DUMBASS
 
-static char			flags[19] = "0123456789#-+hlL.* ";
+static char			flags[20] = "0123456789#-+hlL.* ";
 
 typedef	struct	s_printf
 {
@@ -47,6 +47,7 @@ typedef	struct	s_printf
 	int			lo;
 	int			lod;
 	char		*ptr;
+	int			loose;
 }				t_printf;
 
 int				output(t_printf *data, va_list args, int debug);
@@ -66,5 +67,7 @@ t_printf		*initialize(char *ptr);
 char			*helper_itoa_base(long long value, int base, t_printf *data);
 char			*ftoa(long double value, t_printf *data);
 void			helper_print_padding(t_printf *data);
+void			helper_plusminus(t_printf *data);
+void			helper_zeros_spaces(t_printf *data);
 void			helper_prc_zeros(t_printf *data);
 #endif

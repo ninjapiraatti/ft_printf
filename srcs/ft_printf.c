@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/11 15:20:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/02 09:16:47 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int			ft_printf(const char *format, ...)
 			ft_putchar((char)*traverse);
 			traverse++;
 		}
+		if (traverse == NULL)
+			return (0);
 	}
 	va_end(args);
 	return (0);

@@ -6,11 +6,22 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/11 15:50:27 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/02 12:00:49 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+// Too many trailing:
+//First line of code: {return test("% -8.5i", 34);}
+
+// Too few trailing:
+//First line of code: {return test("% -8.3d", -8473);}
+
+// Too few in front:
+//First line of code: {return test("%-5.i", 0);}
+//First line of code: {return test("%+5.0i", 0);}
+//First line of code: {return test("%5.0i", 0);}
 
 void		helper_print_padding(t_printf *data)
 {
@@ -19,19 +30,23 @@ void		helper_print_padding(t_printf *data)
 	i = 0;
 	i = data->fieldwidth - data->len;
 	if ((data->o != 1 && data->x != 1 && data->X != 1 && data->u != 1) && 
-	((data->minus == 1 && data->plus == 1) || 
+	((data->plus == 1) || 
 	(data->lli < 0 && data->dot == 1) ||
-	(data->minus == 0 && data->plus == 1) ||
+	(data->lli < 0 && data->fieldwidth > 0) ||
 	(data->minus == 1 && data->flo < 0)))
 		i--;
+	if ((data->i == 1 || data->d == 1) && (data->prc == 0 && data->dot == 1 && data->lli == 0 && data->len == 1))
+		i++;
 	if ((data->prc > data->len) && data->s != 1)
 		i -= data->prc - data->len;
-	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && data->dot == 0)
+	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && data->dot == 0 && data->loose == 0)
 		i = 0;
 	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 && (data->f == 1 || data->lo == 1))
 		i = 0;
 	if ((data->x == 1 || data->X == 1) && data->hash == 1)
 		i -= 2;
+	//if (data->dot == 1 && data->lli == 0 && data->prc == 0)
+	//	i++;
 	while (i > 0)
 	{
 		ft_putchar(' ');
@@ -39,8 +54,7 @@ void		helper_print_padding(t_printf *data)
 	}
 }
 
-
-void		helper_zeros_spaces(t_printf *data)
+void		helper_spaces(t_printf *data)
 {
 	if (data->space == 1)
 	{
@@ -55,9 +69,11 @@ void		helper_zeros_spaces(t_printf *data)
 		}
 		else if (data->minus == 1)
 			data->len += 1;
-		else if (data->plus == 1 || data->lli < 0)
+		else if (data->plus == 1 || data->lli < 0 || data->fieldwidth > data->len)
 			;
-		else if (data->fieldwidth == 0 && data->flo >= 0)
+		else if ((data->fieldwidth == 0 && data->flo >= 0) ||
+		(data->fieldwidth > 0 && data->dot == 0) ||
+		(data->dot == 1 && (data->lli == 0 || data->prc > 0)))
 			ft_putchar(' ');
 	}
 }
@@ -74,6 +90,7 @@ void		helper_plusminus(t_printf *data)
 
 /*
 Precision helper is probably fucked
+First line of code: {return test("%.0i", 0);}
 */
 void		helper_prc_zeros(t_printf *data)
 {
@@ -86,7 +103,7 @@ void		helper_prc_zeros(t_printf *data)
 	{
 		i = data->prc - data->len;
 		data->len += i;
-		if (data->space == 1 && data->minus == 1)
+		if (data->space == 1 && data->minus == 1 && data->lli > 0)
 			i++;
 	}
 	else if ((data->dot == 0 || data->lo == 1 || data->f == 1) && data->zero == 1 && data->minus == 0)

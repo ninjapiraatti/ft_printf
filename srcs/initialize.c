@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/04/11 17:35:06 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/01 21:55:20 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_printf		*initialize(char *ptr)
 	data->lli = 0;
 	data->flo =	0;
 	data->ptr = ptr;
+	data->loose = 0;
 	
 	return(data);
 }
