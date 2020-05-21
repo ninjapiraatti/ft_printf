@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/02 08:53:52 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/21 14:42:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,8 @@ int		inject_int(char *str, t_printf *data, int *flag)
 	return (i);
 }
 
-int			flag_to_data(char *str, t_printf *data)
+int			basic_flags(char *str, t_printf *data)
 {
-	int 	i;
-
-	i = 0;
 	if(*str == '+')
 		data->plus = 1;
 	else if(*str == '-')
@@ -43,14 +40,20 @@ int			flag_to_data(char *str, t_printf *data)
 		data->lo = 1;
 	else if(*str == ' ')
 		data->space = 1;
-	else if(*str == '.')
+	else if(*str == '*')
+		data->star = 1;
+	return (1);
+}
+
+int			flag_to_data(char *str, t_printf *data)
+{
+	basic_flags(str, data);
+	if(*str == '.')
 	{
 		data->dot = 1;
 		str++;
 		return (inject_int(str, data, &(data->prc)) + 1);
 	}
-	else if(*str == '*')
-		data->star = 1;
 	else if(*str == '0')
 	{
 		str--;
@@ -63,17 +66,9 @@ int			flag_to_data(char *str, t_printf *data)
 	return (1);
 }
 
-char		*parse(char *str, t_printf *data)
+int			parse_numerals(char *str, t_printf *data)
 {
-	int		i;
-
-	i = 0;
-	str++;
-	while (ft_strchr(flags, *str) != NULL)
-		str += flag_to_data(str, data);
-	if (*str == 'c')
-		data->c = 1;
-	else if (*str == 'd')
+	if (*str == 'd')
 		data->d = 1;
 	else if (*str == 'i')
 		data->i = 1;
@@ -81,6 +76,21 @@ char		*parse(char *str, t_printf *data)
 		data->o = 1;
 	else if (*str == 'u')
 		data->u = 1;
+	else if (*str == 'f')
+		data->f = 1;
+	else
+		return (0);
+	return (1);
+}
+
+char		*parse(char *str, t_printf *data)
+{
+	while (ft_strchr(flags, *str) != NULL)
+		str += flag_to_data(str, data);
+	if (parse_numerals(str, data) == 1)
+		return (str);
+	else if (*str == 'c')
+		data->c = 1;
 	else if (*str == 's')
 		data->s = 1;
 	else if (*str == 'x')
@@ -89,8 +99,6 @@ char		*parse(char *str, t_printf *data)
 		data->X = 1;
 	else if (*str == 'p')
 		data->p = 1;
-	else if (*str == 'f')
-		data->f = 1;
 	else if (*str == '%')
 		data->loose = 1;
 	else
