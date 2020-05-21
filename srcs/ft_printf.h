@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/01 21:54:48 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/21 13:44:34 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "../libft/includes/libft.h"
 # include <fcntl.h>
 # include <stdarg.h>
-# include <stdio.h> // REMOVE IT YOU DUMBASS
 
 static char			flags[20] = "0123456789#-+hlL.* ";
 
