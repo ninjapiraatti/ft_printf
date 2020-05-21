@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/21 13:54:21 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/05/21 14:00:40 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,7 @@ int			ft_printf(const char *format, ...)
 	while (*traverse != '\0')
 	{
 		if (*traverse == '%')
-		{
-			if (*(traverse + 1) == '%')
-			{
-				ft_putchar('%');
-				traverse += 2;
-			}
-			else
-				traverse = preparse(traverse, args);
-		}
+			traverse = preparse(traverse, args);
 		else
 		{
 			ft_putchar((char)*traverse);
