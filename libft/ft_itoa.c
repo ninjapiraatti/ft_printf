@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 13:57:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/03 20:31:18 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/03 20:40:54 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_itoa(long n)
 	if (!(str = (char *)malloc((sizeof(char) * len + 1))))
 		return (NULL);
 	if (neg > 0)
-		str[0] = 'x';
+		str[0] = '-';
 	str[len] = '\0';
 	while (len >= (1 + neg))
 	{
