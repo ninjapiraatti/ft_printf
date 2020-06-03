@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 08:33:06 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/02/24 20:03:16 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/03 18:53:45 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char			*roundme(long double ds, int start, char *str, t_printf *data)
 char			*ftoa(long double value, t_printf *data)
 {
 	int			i;
-	int			is;
+	long		is;
 	long double	ds;
 	int			len;
 	char		*str;
@@ -55,7 +55,7 @@ char			*ftoa(long double value, t_printf *data)
 	if (value < 0)
 		value *= -1;
 	value = addfive(value, data);
-	is = (int)value;
+	is = (long)value;
 	ds = value - (long double)is;
 	len += ft_strlen(ft_itoa(is)) + data->prc + 2;
 	if (!(str = malloc(sizeof(char) * len)))
