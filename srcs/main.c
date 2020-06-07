@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/06/07 19:33:44 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/07 20:58:24 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1347,10 +1347,6 @@ void	tlouekar()
 	ft_printf("\n****** TEST #11 ******\n\n");
  	ft_printf("'%p'\n", 55);
  	printf("'%p'\n", 55);
-
-	ft_printf("\n****** TEST #12 ******\n\n");
- 	ft_printf("'%f'\n", 1.85477);
- 	printf("'%f'\n", 1.85477);
 }
 
 int main()
