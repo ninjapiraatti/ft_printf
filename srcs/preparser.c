@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/07 19:03:10 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/07 19:19:24 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*preparse(char *str, va_list args)
 		output(data, args, 0);
 		str++;
 	}
+	free(data);
 	return (str);
 }
