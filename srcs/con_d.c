@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/03 12:38:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/07 17:09:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,5 @@ void			con_d(t_printf *data, va_list args)
 	helper_prc_zeros(data);
 	if (!(data->dot == 1 && data->lli == 0 && data->prc == 0))
 		ft_putstr(str);
+	free(str);
 }

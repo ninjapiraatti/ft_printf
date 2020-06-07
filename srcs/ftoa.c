@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 08:33:06 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/03 18:53:45 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/07 18:23:14 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ char			*ftoa(long double value, t_printf *data)
 	is = (long)value;
 	ds = value - (long double)is;
 	len += ft_strlen(ft_itoa(is)) + data->prc + 2;
-	if (!(str = malloc(sizeof(char) * len)))
+	if (!(str = malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	ft_strcpy(str, ft_itoa(is));
+	str = ft_strcpy(str, ft_itoa(is));
 	if (data->prc > 0 || data->hash == 1)
 	{
 		i = ft_strlen(str);

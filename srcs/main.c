@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/04/11 17:42:37 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/07 17:40:31 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1302,6 +1302,10 @@ void	bonus()
 
 void	tlouekar()
 {
+	char	*test;
+ 	void	*pointer;
+
+ 	pointer = &test;
 	ft_printf("\n******************  MY TESTS ******************\n\n");
 
 	ft_printf("\n****** TEST #1 ******\n\n");
@@ -1331,6 +1335,22 @@ void	tlouekar()
 	ft_printf("\n****** TEST #7 ******\n\n");
  	ft_printf("'%Lf'\n", 22.337203685477l);
  	printf("'%Lf'\n", 22.337203685477l);
+
+	ft_printf("\n****** TEST #8 ******\n\n");
+ 	ft_printf("'%s'\n", "hello");
+ 	printf("'%s'\n", "hello");
+
+	ft_printf("\n****** TEST #9 ******\n\n");
+ 	ft_printf("'%c'\n", "x");
+ 	printf("'%c'\n", "x");
+
+	ft_printf("\n****** TEST #10 ******\n\n");
+ 	ft_printf("'%f'\n", 1.85477);
+ 	printf("'%f'\n", 1.85477);
+
+	ft_printf("\n****** TEST #11 ******\n\n");
+ 	ft_printf("'%p'\n", pointer);
+ 	printf("'%p'\n", pointer);
 }
 
 int main()
