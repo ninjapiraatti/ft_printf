@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/21 14:14:21 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/08 12:20:40 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int			output(t_printf *data, va_list args, int debug)
 	if (debug == 1)
 	{
 		ft_putstr("\n---\nDebug data:\n");
-		ft_putstr("  fieldwidth:");
-		ft_putnbr(data->fieldwidth);
+		ft_putstr("  prc:");
+		ft_putnbr(data->prc);
 		ft_putstr("\n---\n");
 	}
 	return (0);

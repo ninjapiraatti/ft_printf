@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/21 14:05:13 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/08 13:30:56 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		helper_print_padding(t_printf *data)
 		i -= 2;
 	if ((data->prc == 0 && data->lli == 0 && data->dot == 1) && (data->i == 1 
 	|| data->d == 1 || data->o == 1))
-			i++;
+		i++;
 	while (i > 0)
 	{
 		ft_putchar(' ');
@@ -73,9 +73,12 @@ void		helper_prc_zeros(t_printf *data)
 	&& data->zero == 1 && data->minus == 0)
 	{
 		i = data->fieldwidth - data->len;
-		if (data->lli < 0 || data->plus == 1 || data->flo < 0)
+		if (data->lli < 0 || data->plus == 1 || data->flo < 0 || data->space == 1)
 			i--;
 	}
+	if ((data->x == 1 || data->X == 1) && data->hash == 1 
+	&& data->lli != 0 && data->minus == 0 && data->dot == 0)
+		i -= 2;
 	while (i > 0)
 	{
 		ft_putchar('0');
