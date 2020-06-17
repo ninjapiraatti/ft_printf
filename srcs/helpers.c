@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/17 10:04:27 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/17 10:08:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		helper_print_padding(t_printf *data)
 	if ((data->x == 1 || data->X == 1) && data->hash == 1 && data->lli != 0)
 		i -= 2;
 	if ((data->prc == 0 && data->lli == 0 && data->dot == 1) && (data->i == 1 
-	|| data->d == 1 || data->u == 1 || data->o == 1))
+	|| data->d == 1 || data->u == 1 || (data->o == 1 && data->hash == 0)))
 		i++;
 	while (i > 0)
 	{
