@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 11:03:55 by gmolin            #+#    #+#             */
-/*   Updated: 2020/06/08 12:08:18 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/06/16 10:21:42 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -1304,25 +1304,13 @@ void	tlouekar()
 {
 	ft_printf("\n******************  MY TESTS ******************\n\n");
 
-	ft_printf("\n****** TEST #1 ******\n\n");
- 	ft_printf("'this %#x number'\n", 0);
- 	printf("'this %#x number'\n", 0);
-
-	ft_printf("\n****** TEST #2 ******\n\n");
- 	ft_printf("'%5%'\n"); // Undefined behavior, don't need to fix
- 	printf("'%5%'\n");
-
-	ft_printf("\n****** TEST #3 ******\n\n");
- 	ft_printf("'%-5.x'\n", 0);
- 	printf("'%-5.x'\n", 0);
-
-	ft_printf("\n****** TEST #4 ******\n\n");
- 	ft_printf("'%#05X'\n", 43);
- 	printf("'%#05X'\n", 43);
-
 	ft_printf("\n****** TEST #5 ******\n\n");
- 	ft_printf("'%#-8.5X'\n", 0);
- 	printf("'%#-8.5X'\n", 0);
+ 	ft_printf("'this %#o number\n'", 0);
+ 	printf("'this %#o number\n'", 0);
+
+	ft_printf("\n****** TEST #6 ******\n\n");
+ 	ft_printf("'%20li'\n", 22337203685477);
+ 	printf("'%20li'\n", 22337203685477);
 
 	ft_printf("\n****** TEST #6 ******\n\n");
  	ft_printf("'%20li'\n", 22337203685477);
