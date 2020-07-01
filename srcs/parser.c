@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/21 14:42:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 09:51:33 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int			parse_numerals(char *str, t_printf *data)
 
 char		*parse(char *str, t_printf *data)
 {
-	while (ft_strchr(flags, *str) != NULL)
+	while (ft_strchr(g_flags, *str) != NULL)
 		str += flag_to_data(str, data);
 	if (parse_numerals(str, data) == 1)
 		return (str);

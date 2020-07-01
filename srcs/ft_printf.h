@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/21 13:44:34 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 09:51:24 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <fcntl.h>
 # include <stdarg.h>
 
-static char			flags[20] = "0123456789#-+hlL.* ";
+static char			g_flags[20] = "0123456789#-+hlL.* ";
 
 typedef	struct	s_printf
 {
@@ -40,7 +40,7 @@ typedef	struct	s_printf
 	int			u;
 	int			s;
 	int			x;
-	int			X;
+	int			bx;
 	int			p;
 	int			f;
 	int			lo;

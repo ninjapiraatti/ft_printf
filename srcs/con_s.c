@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/08 11:23:20 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 09:46:52 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,15 @@ void			con_s(t_printf *data, va_list args)
 
 	if (data->space == 1)
 		ft_putchar(' ');
-	if(!(str = va_arg(args, char *)))
+	if (!(str = va_arg(args, char *)))
 	{
 		if (data->dot == 0)
 			tmp = ft_strdup("(null)");
 		else
 			tmp = ft_strsub("(null)", 0, data->len);
 	}
-	else {
+	else
+	{
 		if (data->dot == 0)
 			tmp = ft_strdup(str);
 		else
