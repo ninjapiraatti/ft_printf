@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:38:42 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:48:54 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ char			*helper_itoa_base(long long value, int base, t_printf *data);
 char			*ftoa(long double value, t_printf *data);
 void			helper_print_padding(t_printf *data);
 void			helper_plusminus(t_printf *data);
+void			helper_spaces(t_printf *data);
 void			helper_zeros_spaces(t_printf *data);
 void			helper_prc_zeros(t_printf *data);
 #endif
