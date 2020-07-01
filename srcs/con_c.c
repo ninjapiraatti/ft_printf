@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:38:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 12:44:00 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@ void			con_c(t_printf *data, va_list args)
 
 	data->len = 1;
 	if (data->spc == 1)
+	{
 		ft_putchar(' ');
+		data->cc++;
+	}
 	if (!(c = va_arg(args, int)))
 	{
 		if (c == 0)
+		{
 			ft_putchar('\0');
+			data->cc++;
+		}
 		data->len = 0;
 	}
 	else
@@ -31,5 +37,6 @@ void			con_c(t_printf *data, va_list args)
 		if (data->minus == 0)
 			helper_print_padding(data);
 		ft_putchar(c);
+		data->cc++;
 	}
 }

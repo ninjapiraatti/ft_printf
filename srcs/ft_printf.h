@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:48:54 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 12:26:52 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef	struct	s_printf
 	int			lod;
 	char		*ptr;
 	int			loose;
+	int			cc;
 }				t_printf;
 
 int				output(t_printf *data, va_list args, int debug);
@@ -60,7 +61,7 @@ void			con_p(t_printf *data, va_list args);
 void			con_f(t_printf *data, va_list args);
 int				ft_printf(const char *format, ...);
 char			*parse(char *str, t_printf *data);
-char			*preparse(char *str, va_list args);
+char			*preparse(char *str, va_list args, t_printf *data);
 char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
 char			*helper_itoa_base(long long value, int base, t_printf *data);

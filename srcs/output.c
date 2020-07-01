@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:43:21 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 12:27:31 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void		con_loose(t_printf *data, va_list args)
 	helper_spaces(data);
 	helper_prc_zeros(data);
 	ft_putchar('%');
+	data->cc++;
 }
 
 void		print_con_spec(t_printf *data, va_list args)
@@ -52,12 +53,5 @@ int			output(t_printf *data, va_list args, int debug)
 	print_con_spec(data, args);
 	if (data->minus == 1)
 		helper_print_padding(data);
-	if (debug == 1)
-	{
-		ft_putstr("\n---\nDebug data:\n");
-		ft_putstr("  prc:");
-		ft_putnbr(data->prc);
-		ft_putstr("\n---\n");
-	}
 	return (0);
 }

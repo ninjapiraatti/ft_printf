@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:38:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 12:35:17 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		helper_print_padding(t_printf *data)
 	while (i > 0)
 	{
 		ft_putchar(' ');
+		data->cc++;
 		i--;
 	}
 }
@@ -45,7 +46,10 @@ void		helper_spaces(t_printf *data)
 {
 	if (data->spc == 1 && data->pl == 0 && data->lli >= 0
 	&& data->flo >= 0)
+	{
 		ft_putchar(' ');
+		data->cc++;
+	}
 }
 
 void		helper_plusminus(t_printf *data)
@@ -54,9 +58,13 @@ void		helper_plusminus(t_printf *data)
 	&& data->o != 1)
 	{
 		ft_putchar('+');
+		data->cc++;
 	}
 	if (data->lli < 0 || data->flo < 0)
+	{
 		ft_putchar('-');
+		data->cc++;
+	}
 }
 
 void		helper_prc_zeros(t_printf *data)
@@ -84,6 +92,7 @@ void		helper_prc_zeros(t_printf *data)
 	while (i > 0)
 	{
 		ft_putchar('0');
+		data->cc++;
 		i--;
 	}
 }

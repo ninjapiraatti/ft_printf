@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/05/01 21:54:21 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 12:26:44 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 # include "../libft/includes/libft.h"
 # include <fcntl.h>
 # include <stdarg.h>
-# include <stdio.h> // REMOVE IT YOU DUMBASS
 
-static char			flags[20] = "0123456789#-+hlL.* ";
+static char			g_flags[20] = "0123456789#-+hlL.* ";
 
 typedef	struct	s_printf
 {
 	int			zero;
-	int			plus;
+	int			pl;
 	int			minus;
-	int			space;
+	int			spc;
 	int			hash;
 	int			dot;
 	int			prc;
@@ -41,13 +40,14 @@ typedef	struct	s_printf
 	int			u;
 	int			s;
 	int			x;
-	int			X;
+	int			bx;
 	int			p;
 	int			f;
 	int			lo;
 	int			lod;
 	char		*ptr;
 	int			loose;
+	int			cc;
 }				t_printf;
 
 int				output(t_printf *data, va_list args, int debug);
@@ -61,13 +61,14 @@ void			con_p(t_printf *data, va_list args);
 void			con_f(t_printf *data, va_list args);
 int				ft_printf(const char *format, ...);
 char			*parse(char *str, t_printf *data);
-char			*preparse(char *str, va_list args);
+char			*preparse(char *str, va_list args, t_printf *data);
 char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
 char			*helper_itoa_base(long long value, int base, t_printf *data);
 char			*ftoa(long double value, t_printf *data);
 void			helper_print_padding(t_printf *data);
 void			helper_plusminus(t_printf *data);
+void			helper_spaces(t_printf *data);
 void			helper_zeros_spaces(t_printf *data);
 void			helper_prc_zeros(t_printf *data);
 #endif
