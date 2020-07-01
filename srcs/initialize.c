@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:22:49 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:40:44 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ t_printf		*initialize_more(char *ptr, t_printf *data)
 	data->lo = 0;
 	data->lod = 0;
 	data->zero = 0;
-	data->plus = 0;
+	data->pl = 0;
 	data->minus = 0;
-	data->space = 0;
+	data->spc = 0;
 	data->hash = 0;
 	data->dot = 0;
 	data->prc = 0;
@@ -28,10 +28,9 @@ t_printf		*initialize_more(char *ptr, t_printf *data)
 	data->fieldwidth = 0;
 	data->len = 0;
 	data->lli = 0;
-	data->flo =	0;
+	data->flo = 0;
 	data->ptr = ptr;
 	data->loose = 0;
-
 	return (data);
 }
 
@@ -51,6 +50,5 @@ t_printf		*initialize(char *ptr)
 	data->bx = 0;
 	data->p = 0;
 	data->f = 0;
-	
-	return(initialize_more(ptr, data));
+	return (initialize_more(ptr, data));
 }

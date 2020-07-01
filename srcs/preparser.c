@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/08 12:22:52 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:44:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*preparse(char *str, va_list args)
 {
 	t_printf	*data;
 
-	if (*str == '\\') // for escaping
+	if (*str == '\\')
 	{
 		str++;
 		write(1, (char *)str, 1);

@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:22:18 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:38:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,20 @@ void		helper_print_padding(t_printf *data)
 
 	i = 0;
 	i = data->fieldwidth - data->len;
-	if ((data->x != 1 && data->bx != 1 && data->u != 1) && 
-	((data->plus == 1) || (data->space == 1) ||
-	(data->lli < 0) || (data->flo < 0)))
+	if ((data->x != 1 && data->bx != 1 && data->u != 1) &&
+	((data->pl == 1) || (data->spc == 1) || (data->lli < 0) || (data->flo < 0)))
 		i--;
 	if ((data->prc > data->len) && data->s != 1)
 		i -= data->prc - data->len;
-	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 
+	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1
 	&& data->dot == 0 && data->loose == 0)
 		i = 0;
-	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1 
+	if (data->minus == 0 && data->fieldwidth > 0 && data->zero == 1
 	&& (data->f == 1 || data->lo == 1))
 		i = 0;
 	if ((data->x == 1 || data->bx == 1) && data->hash == 1 && data->lli != 0)
 		i -= 2;
-	if ((data->prc == 0 && data->lli == 0 && data->dot == 1) && (data->i == 1 
+	if ((data->prc == 0 && data->lli == 0 && data->dot == 1) && (data->i == 1
 	|| data->d == 1 || data->u == 1 || (data->o == 1 && data->hash == 0)))
 		i++;
 	while (i > 0)
@@ -44,16 +43,18 @@ void		helper_print_padding(t_printf *data)
 
 void		helper_spaces(t_printf *data)
 {
-	if (data->space == 1 && data->plus == 0 && data->lli >= 0 
+	if (data->spc == 1 && data->pl == 0 && data->lli >= 0
 	&& data->flo >= 0)
 		ft_putchar(' ');
 }
 
 void		helper_plusminus(t_printf *data)
 {
-	if (data->plus == 1 && data->lli >= 0 && data->flo >= 0 
-	&& data->o != 1) 
+	if (data->pl == 1 && data->lli >= 0 && data->flo >= 0
+	&& data->o != 1)
+	{
 		ft_putchar('+');
+	}
 	if (data->lli < 0 || data->flo < 0)
 		ft_putchar('-');
 }
@@ -67,14 +68,15 @@ void		helper_prc_zeros(t_printf *data)
 	j = 0;
 	if (data->prc > data->len)
 		i = data->prc - data->len;
-	else if ((data->dot == 0 || data->lo == 1 || data->f == 1) 
+	else if ((data->dot == 0 || data->lo == 1 || data->f == 1)
 	&& data->zero == 1 && data->minus == 0)
 	{
 		i = data->fieldwidth - data->len;
-		if (data->lli < 0 || data->plus == 1 || data->flo < 0 || data->space == 1)
+		if (data->lli < 0 || data->pl == 1 || data->flo < 0
+		|| data->spc == 1)
 			i--;
 	}
-	if ((data->x == 1 || data->bx == 1) && data->hash == 1 
+	if ((data->x == 1 || data->bx == 1) && data->hash == 1
 	&& data->lli != 0 && data->minus == 0 && data->dot == 0)
 		i -= 2;
 	if (data->o == 1 && data->hash == 1 && data->lli != 0)

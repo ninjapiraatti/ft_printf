@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 09:51:24 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:38:42 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static char			g_flags[20] = "0123456789#-+hlL.* ";
 typedef	struct	s_printf
 {
 	int			zero;
-	int			plus;
+	int			pl;
 	int			minus;
-	int			space;
+	int			spc;
 	int			hash;
 	int			dot;
 	int			prc;

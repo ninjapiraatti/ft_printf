@@ -6,13 +6,13 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:21:01 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:22:37 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:43:21 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			con_loose(t_printf *data, va_list args)
+void		con_loose(t_printf *data, va_list args)
 {
 	data->fieldwidth--;
 	if (data->minus == 0 && data->zero == 0)
