@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/07/01 12:26:20 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/07/01 14:28:10 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,6 +78,5 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	make -C libft fclean
-	rm -f *.a
 
 re: fclean all

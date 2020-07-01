@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 14:18:58 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 16:39:25 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,24 @@ char			*preparse(char *str, va_list args, t_printf *data)
 	return (str);
 }
 
+char			*loopidiloop(char *traverse, va_list args, t_printf *data)
+{
+	if (*traverse == '%')
+		traverse = preparse(traverse, args, data);
+	else
+	{
+		ft_putchar((char)*traverse);
+		traverse++;
+		data->cc++;
+	}
+	if (traverse == NULL)
+	{
+		free(data);
+		return (NULL);
+	}
+	return (traverse);
+}
+
 int				ft_printf(const char *format, ...)
 {
 	va_list		args;
@@ -44,26 +62,17 @@ int				ft_printf(const char *format, ...)
 	t_printf	*data;
 	int			count;
 
+	count = 0;
 	va_start(args, format);
 	traverse = (char *)format;
 	while (*traverse != '\0')
 	{
 		data = initialize(traverse);
-		if (*traverse == '%')
-			traverse = preparse(traverse, args, data);
-		else
-		{
-			ft_putchar((char)*traverse);
-			traverse++;
-			data->cc++;
-		}
+		traverse = loopidiloop(traverse, args, data);
 		if (traverse == NULL)
 			return (0);
-		if (data)
-		{
-			count = data->cc;
-			free(data);
-		}
+		count += data->cc;
+		free(data);
 	}
 	va_end(args);
 	return (count);
