@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 08:33:06 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 09:52:22 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 10:29:41 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ char			*ftoa(long double value, t_printf *data)
 	int			i;
 	long		is;
 	long double	ds;
-	int			len;
 	char		*str;
 	char		*tmp;
 
@@ -58,8 +57,7 @@ char			*ftoa(long double value, t_printf *data)
 	is = (long)value;
 	tmp = ft_itoa(is);
 	ds = value - (long double)is;
-	len += ft_strlen(tmp) + data->prc + 2;
-	if (!(str = malloc(sizeof(char) * len + 1)))
+	if (!(str = malloc(sizeof(char) * ft_strlen(tmp) + data->prc + 1)))
 		return (NULL);
 	str = ft_strcpy(str, tmp);
 	free(tmp);
