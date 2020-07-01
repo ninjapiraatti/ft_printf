@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 13:36:01 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 14:18:58 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int				ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	traverse = (char *)format;
-	data = initialize(traverse);
 	while (*traverse != '\0')
 	{
+		data = initialize(traverse);
 		if (*traverse == '%')
 			traverse = preparse(traverse, args, data);
 		else
@@ -59,11 +59,11 @@ int				ft_printf(const char *format, ...)
 		}
 		if (traverse == NULL)
 			return (0);
-	}
-	if (data)
-	{
-		count = data->cc;
-		free(data);
+		if (data)
+		{
+			count = data->cc;
+			free(data);
+		}
 	}
 	va_end(args);
 	return (count);
