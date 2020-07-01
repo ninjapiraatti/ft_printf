@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 12:35:19 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 12:51:00 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 13:36:01 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char			*preparse(char *str, va_list args, t_printf *data)
 		output(data, args, 0);
 		str++;
 	}
-	free(data);
 	return (str);
 }
 
@@ -43,6 +42,7 @@ int				ft_printf(const char *format, ...)
 	va_list		args;
 	char		*traverse;
 	t_printf	*data;
+	int			count;
 
 	va_start(args, format);
 	traverse = (char *)format;
@@ -60,6 +60,11 @@ int				ft_printf(const char *format, ...)
 		if (traverse == NULL)
 			return (0);
 	}
+	if (data)
+	{
+		count = data->cc;
+		free(data);
+	}
 	va_end(args);
-	return (data->cc);
+	return (count);
 }

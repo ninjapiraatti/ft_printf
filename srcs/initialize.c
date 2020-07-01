@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:07:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 12:27:10 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/01 13:38:10 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ t_printf		*initialize(char *ptr)
 	t_printf	*data;
 
 	if (!(data = (t_printf *)malloc(sizeof(t_printf))))
+	{
+		ft_printf("Failed to allocate Data.");
 		return (NULL);
+	}
 	data->c = 0;
 	data->d = 0;
 	data->i = 0;
