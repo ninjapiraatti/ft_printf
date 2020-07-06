@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 14:25:52 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 14:54:40 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void		handle_length(t_printf *data, va_list args)
 void		handle_length_unsigned(t_printf *data, va_list args)
 {
 	if (data->l == 1)
-		data->val = (unsigned long)va_arg(args, long);
+		data->val = (unsigned long)va_arg(args, unsigned long);
 	else if (data->ll == 1)
-		data->val = (unsigned long long)va_arg(args, long long);
+		data->val = (unsigned long long)va_arg(args, unsigned long long);
 	else if (data->h == 1)
-		data->val = (unsigned short)va_arg(args, int);
+		data->val = (unsigned short)va_arg(args, unsigned int);
 	else if (data->hh == 1)
-		data->val = (unsigned char)va_arg(args, int);
+		data->val = (unsigned char)va_arg(args, unsigned int);
 	else
-		data->val = (unsigned int)va_arg(args, int);
+		data->val = (unsigned int)va_arg(args, unsigned int);
 }
 
 void		helper_length_flags(char *str, t_printf *data)

@@ -6,13 +6,13 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 13:57:43 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/06/03 20:40:54 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 14:53:24 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-static int	intlen(long n)
+static int	intlen(long long n)
 {
 	int		i;
 
@@ -25,7 +25,7 @@ static int	intlen(long n)
 	return (i);
 }
 
-char		*ft_itoa(long n)
+char		*ft_itoa(long long n)
 {
 	char	*str;
 	int		len;
@@ -33,7 +33,7 @@ char		*ft_itoa(long n)
 	long	nb;
 
 	neg = 0;
-	nb = (long)n;
+	nb = (long long)n;
 	if (nb < 0)
 	{
 		neg = 1;
