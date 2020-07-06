@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 15:01:25 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 09:31:50 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		helper_print_padding(t_printf *data)
 void		helper_spaces(t_printf *data)
 {
 	if (data->spc == 1 && data->pl == 0 && data->lli >= 0
-	&& data->flo >= 0)
+	&& data->flo >= 0 && data->loose == 0)
 	{
 		ft_putchar(' ');
 		data->cc++;
