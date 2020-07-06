@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/01 14:57:04 by tlouekar          #+#    #+#              #
-#    Updated: 2020/07/01 16:48:21 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/07/06 14:18:33 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = 	srcs/ft_printf.c \
 		srcs/initialize.c \
 		srcs/output.c \
 		srcs/helpers.c \
+		srcs/helpers_length.c \
 		srcs/ftoa.c \
 
 OBJS = 	ft_printf.o \
@@ -40,6 +41,7 @@ OBJS = 	ft_printf.o \
 		initialize.o \
 		output.o \
 		helpers.o \
+		helpers_length.o \
 		ftoa.o \
 
 EXE = srcs/main.c

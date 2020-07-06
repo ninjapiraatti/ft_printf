@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 12:26:44 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 14:18:43 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/includes/libft.h"
 # include <fcntl.h>
 # include <stdarg.h>
+# include <stdint.h>
 
 static char			g_flags[20] = "0123456789#-+hlL.* ";
 
@@ -31,7 +32,11 @@ typedef	struct	s_printf
 	int			star;
 	int			fieldwidth;
 	int			len;
-	long long	lli;
+	int			l;
+	int			ll;
+	int			h;
+	int			hh;
+	intmax_t	val;
 	long double	flo;
 	int			c;
 	int			d;
@@ -43,7 +48,6 @@ typedef	struct	s_printf
 	int			bx;
 	int			p;
 	int			f;
-	int			lo;
 	int			lod;
 	char		*ptr;
 	int			loose;
@@ -64,8 +68,9 @@ char			*parse(char *str, t_printf *data);
 char			*preparse(char *str, va_list args, t_printf *data);
 char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
-char			*helper_itoa_base(long long value, int base, t_printf *data);
 char			*ftoa(long double value, t_printf *data);
+char			*helper_itoa_base(intmax_t value, int base, t_printf *data);
+void			helper_length_flags(char *str, t_printf *data);
 void			helper_print_padding(t_printf *data);
 void			helper_plusminus(t_printf *data);
 void			helper_spaces(t_printf *data);

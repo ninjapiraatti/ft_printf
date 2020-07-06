@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/01 10:42:38 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 14:20:30 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ int		basic_flags(char *str, t_printf *data)
 		data->minus = 1;
 	else if (*str == '#')
 		data->hash = 1;
-	else if (*str == 'L')
-		data->lod = 1;
-	else if (*str == 'l')
-		data->lo = 1;
 	else if (*str == ' ')
 		data->spc = 1;
 	else if (*str == '*')
@@ -47,6 +43,7 @@ int		basic_flags(char *str, t_printf *data)
 
 int		flag_to_data(char *str, t_printf *data)
 {
+	helper_length_flags(str, data);
 	basic_flags(str, data);
 	if (*str == '.')
 	{
