@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 09:31:50 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/06 10:24:10 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,10 +94,10 @@ void		helper_prc_zeros(t_printf *data)
 	}
 }
 
-char		*helper_itoa_base(long long value, int base, t_printf *data)
+char		*helper_itoa_base(intmax_t value, int base, t_printf *data)
 {
 	char		*s;
-	long long	n;
+	intmax_t	n;
 	int			i;
 	int			caps;
 
