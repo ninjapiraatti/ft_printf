@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 15:21:12 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/07 10:44:11 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ void			con_x(t_printf *data, va_list args)
 		helper_print_padding(data);
 	if (data->hash == 1 && data->val != 0)
 	{
-		if (data->bx == 1)
-			ft_putstr("0X");
-		else
-			ft_putstr("0x");
+		data->bx == 1 ? ft_putstr("0X") : ft_putstr("0x");
 		data->cc += 2;
 	}
 	helper_prc_zeros(data);
