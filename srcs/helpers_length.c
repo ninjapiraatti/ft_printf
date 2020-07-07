@@ -6,11 +6,12 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 14:54:40 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/07 13:40:54 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 void		handle_length(t_printf *data, va_list args)
 {
@@ -31,7 +32,7 @@ void		handle_length_unsigned(t_printf *data, va_list args)
 	if (data->l == 1)
 		data->val = (unsigned long)va_arg(args, unsigned long);
 	else if (data->ll == 1)
-		data->val = (unsigned long long)va_arg(args, unsigned long long);
+		data->val = (uintmax_t)va_arg(args, uintmax_t);
 	else if (data->h == 1)
 		data->val = (unsigned short)va_arg(args, unsigned int);
 	else if (data->hh == 1)
@@ -64,4 +65,29 @@ void		helper_length_flags(char *str, t_printf *data)
 			data->h = 1;
 		}
 	}
+}
+
+char		*helper_itoa_base_u(uintmax_t value, int base, t_printf *data)
+{
+	char		*s;
+	uintmax_t	n;
+	int			i;
+	int			caps;
+
+	caps = 10;
+	if (data->bx == 1)
+		caps = 42;
+	n = (value < 0) ? -value : value;
+	i = 1;
+	while ((n /= base) >= 1)
+		i++;
+	s = (char*)malloc(sizeof(char) * (i + 1));
+	s[i] = '\0';
+	n = (value < 0) ? -value : value;
+	while (i--)
+	{
+		s[i] = (n % base < 10) ? n % base + '0' : n % base + 'a' - caps;
+		n /= base;
+	}
+	return (s);
 }

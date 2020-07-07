@@ -6,15 +6,15 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 11:28:48 by tlouekar          #+#    #+#             */
-/*   Updated: 2019/11/06 10:49:27 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/07 13:59:01 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_atoi(const char *str)
 {
-	long i;
-	long result;
-	long sign;
+	long long	i;
+	long long	result;
+	int			sign;
 
 	i = 0;
 	result = 0;

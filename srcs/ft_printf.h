@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 14:22:19 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/07 13:41:13 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char			*structurize(t_printf *data, char *ptr);
 t_printf		*initialize(char *ptr);
 char			*ftoa(long double value, t_printf *data);
 char			*helper_itoa_base(intmax_t value, int base, t_printf *data);
+char			*helper_itoa_base_u(uintmax_t value, int base, t_printf *data);
 void			helper_length_flags(char *str, t_printf *data);
 void			handle_length(t_printf *data, va_list args);
 void			handle_length_unsigned(t_printf *data, va_list args);
