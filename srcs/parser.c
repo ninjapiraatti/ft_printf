@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 09:43:42 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 14:20:30 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/07 14:14:25 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,14 @@ int		basic_flags(char *str, t_printf *data)
 	else if (*str == ' ')
 		data->spc = 1;
 	else if (*str == '*')
-		data->star = 1;
+	{
+		str--;
+		if (*str == '.')
+			data->starprc = 1;
+		else
+			data->starlen = 1;
+		str++;
+	}
 	return (1);
 }
 
