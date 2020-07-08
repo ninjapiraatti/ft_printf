@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/08 16:23:32 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/08 17:47:44 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include "../libft/includes/libft.h"
-# include <fcntl.h>
 # include <stdarg.h>
 # include <stdint.h>
 
