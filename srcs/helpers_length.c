@@ -6,11 +6,36 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/07 16:02:58 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:42:55 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void		handle_stars(t_printf *data, va_list args)
+{
+	int			temp;
+
+	temp = 0;
+	if (data->starlen == 1)
+	{
+		temp = va_arg(args, intmax_t);
+		if (temp < 0)
+		{
+			data->minus = 1;
+			temp *= -1;
+		}
+		data->fieldwidth = temp;
+	}
+	temp = 0;
+	if (data->starprc == 1)
+	{
+		temp = va_arg(args, intmax_t);
+		if (temp < 0)
+			temp *= -1;
+		data->prc = temp;
+	}
+}
 
 void		handle_length(t_printf *data, va_list args)
 {

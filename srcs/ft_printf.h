@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:37:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/07 14:11:40 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:23:32 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ char			*helper_itoa_base_u(uintmax_t value, int base, t_printf *data);
 void			helper_length_flags(char *str, t_printf *data);
 void			handle_length(t_printf *data, va_list args);
 void			handle_length_unsigned(t_printf *data, va_list args);
+void			handle_stars(t_printf *data, va_list args);
 void			helper_print_padding(t_printf *data);
 void			helper_plusminus(t_printf *data);
 void			helper_spaces(t_printf *data);

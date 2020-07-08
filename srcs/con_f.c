@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/07 14:19:35 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:15:31 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ void			con_f(t_printf *data, va_list args)
 {
 	char		*str;
 
-	if (data->starlen == 1)
-		data->fieldwidth = va_arg(args, int);
-	else if (data->starprc == 1)
-		data->prc = va_arg(args, int);
+	handle_stars(data, args);
 	if (data->lod == 1)
 		data->flo = va_arg(args, long double);
 	else

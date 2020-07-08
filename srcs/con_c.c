@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 13:36:41 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 15:08:23 by tlouekar         ###   ########.fr       */
+/*   Updated: 2020/07/08 16:17:07 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void			con_c(t_printf *data, va_list args)
 {
 	char		c;
 
+	handle_stars(data, args);
 	data->len = 1;
 	if (data->minus == 0)
 		helper_print_padding(data);
