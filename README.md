@@ -1,4 +1,4 @@
-# Ft_printf
+# Hive Helsinki: ft_printf
 C
 
 ## Challenge
