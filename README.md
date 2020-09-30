@@ -1,6 +1,14 @@
-# ft_printf
+# Ft_printf
+C
 
-printf coded from scratch.
+## Challenge
+Recreate C function printf.
+
+## Solution
+Nothing spectacular, structs and loops.
+
+## In hindsight
+I opted for writing a helper function that had to handle way too much. This caused problems both with the school's style guide and debugging as the code turned into spaghetti.
 
 ## Useful materials from 42 video
 
