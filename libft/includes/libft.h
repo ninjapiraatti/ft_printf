@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 08:46:38 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/06 14:53:37 by tlouekar         ###   ########.fr       */
+/*   Updated: 2021/01/16 10:47:28 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define BUFF_SIZE 21
 # define FD_MAX 8192
 
-# include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 

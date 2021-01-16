@@ -6,79 +6,79 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/24 09:41:56 by tlouekar          #+#    #+#              #
-#    Updated: 2020/01/27 10:54:34 by tlouekar         ###   ########.fr        #
+#    Updated: 2020/07/14 15:38:44 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = ft_atoi.c \
-ft_isascii.c \
-ft_isprint.c \
-ft_isalpha.c \
-ft_isdigit.c \
-ft_isalnum.c \
-ft_bzero.c \
-ft_lstdelone.c \
-ft_lstadd.c \
-ft_lstdel.c \
-ft_lstmap.c \
-ft_lstiter.c \
-ft_memalloc.c \
-ft_lstnew.c \
-ft_memchr.c \
-ft_memdel.c \
-ft_memcpy.c \
-ft_memcmp.c \
-ft_itoa.c \
-ft_itoa_base.c \
-ft_putendl.c \
-ft_putchar.c \
-ft_memmove.c \
-ft_memset.c \
-ft_putstr.c \
-ft_putendl_fd.c \
-ft_putnbr.c \
-ft_putnbr_fd.c \
-ft_putstr_fd.c \
-ft_memccpy.c \
-ft_strclr.c \
-ft_strcat.c \
-ft_strdel.c \
-ft_strcpy.c \
-ft_putchar_fd.c \
-ft_striter.c \
-ft_strcmp.c \
-ft_strequ.c \
-ft_strchr.c \
-ft_strdup.c \
-ft_strlen.c \
-ft_striteri.c \
-ft_strjoin.c \
-ft_strmapi.c \
-ft_strlcat.c \
-ft_strmap.c \
-ft_strncat.c \
-ft_strncpy.c \
-ft_strncmp.c \
-ft_strnequ.c \
-ft_strrchr.c \
-ft_strsub.c \
-ft_strnew.c \
-ft_toupper.c \
-ft_strnstr.c \
-ft_tolower.c \
-ft_strstr.c \
-ft_wordlen.c \
-ft_wordcnt.c \
-ft_strsplit.c \
-ft_strtrim.c \
-ft_strcsub.c \
-get_next_line.c \
+SRCS = src/ft_atoi.c \
+src/ft_isascii.c \
+src/ft_isprint.c \
+src/ft_isalpha.c \
+src/ft_isdigit.c \
+src/ft_isalnum.c \
+src/ft_bzero.c \
+src/ft_lstdelone.c \
+src/ft_lstadd.c \
+src/ft_lstdel.c \
+src/ft_lstmap.c \
+src/ft_lstiter.c \
+src/ft_memalloc.c \
+src/ft_lstnew.c \
+src/ft_memchr.c \
+src/ft_memdel.c \
+src/ft_memcpy.c \
+src/ft_memcmp.c \
+src/ft_itoa.c \
+src/ft_itoa_base.c \
+src/ft_putendl.c \
+src/ft_putchar.c \
+src/ft_memmove.c \
+src/ft_memset.c \
+src/ft_putstr.c \
+src/ft_putendl_fd.c \
+src/ft_putnbr.c \
+src/ft_putnbr_fd.c \
+src/ft_putstr_fd.c \
+src/ft_memccpy.c \
+src/ft_strclr.c \
+src/ft_strcat.c \
+src/ft_strdel.c \
+src/ft_strcpy.c \
+src/ft_putchar_fd.c \
+src/ft_striter.c \
+src/ft_strcmp.c \
+src/ft_strequ.c \
+src/ft_strchr.c \
+src/ft_strdup.c \
+src/ft_strlen.c \
+src/ft_striteri.c \
+src/ft_strjoin.c \
+src/ft_strmapi.c \
+src/ft_strlcat.c \
+src/ft_strmap.c \
+src/ft_strncat.c \
+src/ft_strncpy.c \
+src/ft_strncmp.c \
+src/ft_strnequ.c \
+src/ft_strrchr.c \
+src/ft_strsub.c \
+src/ft_strnew.c \
+src/ft_toupper.c \
+src/ft_strnstr.c \
+src/ft_tolower.c \
+src/ft_strstr.c \
+src/ft_wordlen.c \
+src/ft_wordcnt.c \
+src/ft_strsplit.c \
+src/ft_strtrim.c \
+src/ft_strcsub.c \
+src/get_next_line.c \
 
-INCS = includes/libft.h
+INCS = includes/
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 OUTPUT = ft_atoi.o \
 ft_isascii.o \
@@ -144,10 +144,6 @@ ft_strtrim.o \
 ft_strcsub.o \
 get_next_line.o \
 
-EXE = a.out
-
-MAIN = ../main.c
-
 all: $(NAME)
 
 $(NAME):
@@ -161,12 +157,7 @@ norm:
 clean:
 	/bin/rm -f $(OUTPUT)
 
-exe:
-	gcc $(CFLAGS) -o $(EXE) $(MAIN) -I $(INCS) -L. -lft
-
 fclean: clean
 	rm -f $(NAME)
 	
 re: fclean all
-
-fuckall: fclean norm all exe
