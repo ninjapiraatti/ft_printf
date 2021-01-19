@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 15:32:29 by tlouekar          #+#    #+#             */
-/*   Updated: 2020/07/14 15:39:33 by tlouekar         ###   ########.fr       */
+/*   Updated: 2021/01/19 12:27:25 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
+	if (!*str)
+		return (0);
 	while (str[i] != '\0')
 		i++;
 	return (i);
