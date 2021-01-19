@@ -6,7 +6,7 @@
 /*   By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 08:46:38 by tlouekar          #+#    #+#             */
-/*   Updated: 2021/01/16 10:47:28 by tlouekar         ###   ########.fr       */
+/*   Updated: 2021/01/19 11:04:56 by tlouekar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 void				ft_putchar(char c);

@@ -6,7 +6,7 @@
 #    By: tlouekar <tlouekar@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/24 09:41:56 by tlouekar          #+#    #+#              #
-#    Updated: 2020/07/14 15:38:44 by tlouekar         ###   ########.fr        #
+#    Updated: 2021/01/19 11:07:53 by tlouekar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft.a
 SRCS = src/ft_atoi.c \
 src/ft_isascii.c \
 src/ft_isprint.c \
+src/ft_isspace.c \
 src/ft_isalpha.c \
 src/ft_isdigit.c \
 src/ft_isalnum.c \
@@ -83,6 +84,7 @@ CFLAGS = -g -Wall -Wextra -Werror
 OUTPUT = ft_atoi.o \
 ft_isascii.o \
 ft_isprint.o \
+ft_isspace.o \
 ft_isalpha.o \
 ft_isdigit.o \
 ft_isalnum.o \
